@@ -1,0 +1,127 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 335092b00644b7a4b9c8e947e84101cc, type: 3}
+  m_Name: HouseDatabase
+  m_EditorClassIdentifier: 
+  house:
+  - houseSprite: {fileID: 0}
+    name: empty
+    inUse: 0
+    shellCost: 0
+    pearlCost: 0
+    crabAmount: 0
+    max_level: 0
+    level: 0
+  - houseSprite: {fileID: -2120932946, guid: 2321e77bdf0836240ae71f0913b99736, type: 3}
+    name: coco_01
+    inUse: 0
+    shellCost: 0
+    pearlCost: 0
+    crabAmount: 2
+    max_level: 2
+    level: 1
+  - houseSprite: {fileID: -1698735553, guid: 2321e77bdf0836240ae71f0913b99736, type: 3}
+    name: coco_02
+    inUse: 0
+    shellCost: 0
+    pearlCost: 0
+    crabAmount: 4
+    max_level: 2
+    level: 2
+  - houseSprite: {fileID: -1460485833, guid: 696f4ca9e137e6c43bcea590da28064c, type: 3}
+    name: glass_01
+    inUse: 0
+    shellCost: 0
+    pearlCost: 0
+    crabAmount: 1
+    max_level: 4
+    level: 1
+  - houseSprite: {fileID: 1802320258, guid: 696f4ca9e137e6c43bcea590da28064c, type: 3}
+    name: glass_02
+    inUse: 0
+    shellCost: 0
+    pearlCost: 0
+    crabAmount: 2
+    max_level: 4
+    level: 2
+  - houseSprite: {fileID: -860272524, guid: 696f4ca9e137e6c43bcea590da28064c, type: 3}
+    name: glass_03
+    inUse: 0
+    shellCost: 0
+    pearlCost: 0
+    crabAmount: 4
+    max_level: 4
+    level: 3
+  - houseSprite: {fileID: -1436790619, guid: 696f4ca9e137e6c43bcea590da28064c, type: 3}
+    name: glass_04
+    inUse: 0
+    shellCost: 0
+    pearlCost: 0
+    crabAmount: 5
+    max_level: 4
+    level: 4
+  - houseSprite: {fileID: -1258351217, guid: faefc09ade812bd4190e3d7ed855bdfb, type: 3}
+    name: log_01
+    inUse: 0
+    shellCost: 0
+    pearlCost: 0
+    crabAmount: 2
+    max_level: 3
+    level: 1
+  - houseSprite: {fileID: 1389035180, guid: faefc09ade812bd4190e3d7ed855bdfb, type: 3}
+    name: log_02
+    inUse: 0
+    shellCost: 0
+    pearlCost: 0
+    crabAmount: 4
+    max_level: 3
+    level: 2
+  - houseSprite: {fileID: 773582114, guid: faefc09ade812bd4190e3d7ed855bdfb, type: 3}
+    name: log_03
+    inUse: 0
+    shellCost: 0
+    pearlCost: 0
+    crabAmount: 6
+    max_level: 3
+    level: 3
+  - houseSprite: {fileID: 968976620, guid: 0c5f49f9e2b53134088dd1d2b19ced7d, type: 3}
+    name: beach_ball_01
+    inUse: 0
+    shellCost: 0
+    pearlCost: 0
+    crabAmount: 2
+    max_level: 1
+    level: 2
+  - houseSprite: {fileID: -2003191601, guid: 0c5f49f9e2b53134088dd1d2b19ced7d, type: 3}
+    name: beach_ball_02
+    inUse: 0
+    shellCost: 0
+    pearlCost: 0
+    crabAmount: 3
+    max_level: 2
+    level: 2
+  - houseSprite: {fileID: 503994522, guid: dacc5f1fd1773c246bc2c8c017c3d400, type: 3}
+    name: flame_tree_01
+    inUse: 0
+    shellCost: 0
+    pearlCost: 0
+    crabAmount: 4
+    max_level: 2
+    level: 1
+  - houseSprite: {fileID: 1463267180, guid: dacc5f1fd1773c246bc2c8c017c3d400, type: 3}
+    name: flame_tree_02
+    inUse: 0
+    shellCost: 0
+    pearlCost: 0
+    crabAmount: 7
+    max_level: 2
+    level: 2

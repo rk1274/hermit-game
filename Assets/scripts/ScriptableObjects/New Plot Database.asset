@@ -1,0 +1,111 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbaa24832362e9542bf69de8047b4346, type: 3}
+  m_Name: New Plot Database
+  m_EditorClassIdentifier: 
+  plots:
+  - Name: plot_01
+    house:
+      houseSprite: {fileID: 0}
+      name: 
+      inUse: 0
+      shellCost: 0
+      pearlCost: 0
+      crabAmount: 0
+      max_level: 0
+      level: 0
+    shellCost: 0
+    pearlCost: 0
+  - Name: plot_02
+    house:
+      houseSprite: {fileID: 0}
+      name: 
+      inUse: 0
+      shellCost: 0
+      pearlCost: 0
+      crabAmount: 0
+      max_level: 0
+      level: 0
+    shellCost: 0
+    pearlCost: 0
+  - Name: plot_03
+    house:
+      houseSprite: {fileID: 0}
+      name: 
+      inUse: 0
+      shellCost: 0
+      pearlCost: 0
+      crabAmount: 0
+      max_level: 0
+      level: 0
+    shellCost: 0
+    pearlCost: 0
+  - Name: plot_04
+    house:
+      houseSprite: {fileID: 0}
+      name: 
+      inUse: 0
+      shellCost: 0
+      pearlCost: 0
+      crabAmount: 0
+      max_level: 0
+      level: 0
+    shellCost: 0
+    pearlCost: 0
+  - Name: plot_05
+    house:
+      houseSprite: {fileID: 0}
+      name: 
+      inUse: 0
+      shellCost: 0
+      pearlCost: 0
+      crabAmount: 0
+      max_level: 0
+      level: 0
+    shellCost: 0
+    pearlCost: 0
+  - Name: plot_06
+    house:
+      houseSprite: {fileID: 0}
+      name: 
+      inUse: 0
+      shellCost: 0
+      pearlCost: 0
+      crabAmount: 0
+      max_level: 0
+      level: 0
+    shellCost: 0
+    pearlCost: 0
+  - Name: plot_07
+    house:
+      houseSprite: {fileID: 0}
+      name: 
+      inUse: 0
+      shellCost: 0
+      pearlCost: 0
+      crabAmount: 0
+      max_level: 0
+      level: 0
+    shellCost: 0
+    pearlCost: 0
+  - Name: plot_08
+    house:
+      houseSprite: {fileID: 0}
+      name: 
+      inUse: 0
+      shellCost: 0
+      pearlCost: 0
+      crabAmount: 0
+      max_level: 0
+      level: 0
+    shellCost: 0
+    pearlCost: 0
