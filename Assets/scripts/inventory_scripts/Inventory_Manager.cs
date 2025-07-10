@@ -23,7 +23,7 @@ public class Inventory_Manager : MonoBehaviour
         for (int i = 0; i < inv.HouseCount-1; i++)
         {
             images[i].transform.parent.gameObject.SetActive(true);
-            images[i].sprite = inv.GetHouse(i+1).houseSprite;
+            images[i].sprite = inv.GetHouse(i+1).Sprite;
         }
     }
 
@@ -40,7 +40,7 @@ public class Inventory_Manager : MonoBehaviour
         for (int i = 0; i < inv.HouseCount - 1; i++)
         {
             images[i].transform.parent.gameObject.SetActive(true);
-            images[i].sprite = inv.GetHouse(i + 1).houseSprite;
+            images[i].sprite = inv.GetHouse(i + 1).Sprite;
         }
     }
 

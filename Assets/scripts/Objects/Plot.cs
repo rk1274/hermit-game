@@ -6,9 +6,7 @@ using UnityEngine;
 public class Plot
 {
     public string Name;
-
-    public House house;
-
-    public int shellCost;
-    public int pearlCost;
+    public House House;
+    public int ShellCost;
+    public int PearlCost;
 }

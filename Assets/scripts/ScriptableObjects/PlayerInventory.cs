@@ -31,15 +31,15 @@ public class PlayerInventory : ScriptableObject
     public void AddShells(int amount) => shells += amount;
     public void AddPearls(int amount) => pearls += amount;
 
-    public void AddCapacity(House house) => capacity += house.crabAmount;
-    public void RemoveCapacity(House house) => capacity -= house.crabAmount;
+    public void AddCapacity(House house) => capacity += house.CrabAmount;
+    public void RemoveCapacity(House house) => capacity -= house.CrabAmount;
 
-    public void AddCapacity(int index) => capacity += GetHouse(index).crabAmount;
-    public void RemoveCapacity(int index) => capacity -= GetHouse(index).crabAmount;
+    public void AddCapacity(int index) => capacity += GetHouse(index).CrabAmount;
+    public void RemoveCapacity(int index) => capacity -= GetHouse(index).CrabAmount;
 
     public void AddHouse(House house)
     {
-        houses.Add((House)house.Shallowcopy());
+        houses.Add((House)house.ShallowCopy());
     }
 
     public void UpdateHouse(House current, House updated)
@@ -52,7 +52,7 @@ public class PlayerInventory : ScriptableObject
             return;
         }
 
-        bool wasPreviouslyInUse = houses[index].inUse;
+        bool wasPreviouslyInUse = houses[index].InUse;
 
         if (wasPreviouslyInUse)
         {
@@ -60,8 +60,8 @@ public class PlayerInventory : ScriptableObject
             AddCapacity(updated);
         }
 
-        houses[index] = (House)updated.Shallowcopy();
-        houses[index].inUse = wasPreviouslyInUse;
+        houses[index] = (House)updated.ShallowCopy();
+        houses[index].InUse = wasPreviouslyInUse;
     }
 
     public House GetHouse(int index)

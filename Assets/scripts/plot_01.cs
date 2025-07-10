@@ -40,7 +40,7 @@ public class plot_01 : MonoBehaviour
     private void UpdateHouse(int selectedOption)
     {
         House house = playerInventory.GetHouse(selectedOption);
-        artworkSprite.sprite = house.houseSprite;
+        artworkSprite.sprite = house.Sprite;
     }
 
     private void Load()

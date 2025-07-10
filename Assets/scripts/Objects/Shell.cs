@@ -5,5 +5,5 @@ using UnityEngine;
 
 public class Shell
 {
-    public Sprite sprite;
+    public Sprite Sprite;
 }

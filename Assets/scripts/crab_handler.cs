@@ -29,12 +29,12 @@ public class crab_handler : MonoBehaviour
     private void UpdateBodySprite(GameObject go, Crab crab)
     {
         spriteR = go.GetComponent<SpriteRenderer>();
-        spriteR.sprite = crab.body.sprite;
+        spriteR.sprite = crab.Body.Sprite;
     }
 
     private void UpdateShellSprite(GameObject go, Crab crab)
     {
         spriteR = go.GetComponent<SpriteRenderer>();
-        spriteR.sprite = crab.shell.sprite;
+        spriteR.sprite = crab.Shell.Sprite;
     }
 }

@@ -20,9 +20,9 @@ public class AfterWalkLoader : MonoBehaviour
 
         for (int i = 0; i < items.Length; i++)
         {
-            if(items[i] != null && !string.IsNullOrEmpty(items[i].name))
+            if(items[i] != null && !string.IsNullOrEmpty(items[i].Name))
             {
-                string[] name = items[i].name.Split('_');
+                string[] name = items[i].Name.Split('_');
                 if (name[0] == "shell")
                 {
                     Debug.Log("SHELL FOUND!");
@@ -36,7 +36,7 @@ public class AfterWalkLoader : MonoBehaviour
                 else if (name[0] == "crab")
                 {
                     Debug.Log("CRAB FOUND!");
-                    Crab crab = crabDB.GetCrab(items[i].name);
+                    Crab crab = crabDB.GetCrab(items[i].Name);
                     inventory.AddCrab(crab);
                 }
             }

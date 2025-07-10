@@ -13,7 +13,7 @@ public class CrabDatabase : ScriptableObject
     {
         foreach(Crab crab in crabs)
         {
-            if(crab.name == name)
+            if(crab.Name == name)
             {
                 return crab;
             }

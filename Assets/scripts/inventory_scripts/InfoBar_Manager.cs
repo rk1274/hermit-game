@@ -29,15 +29,15 @@ public class InfoBar_Manager : MonoBehaviour
 
     public void Update_Info(House house)
     {
-        if (house.max_level == house.level)
+        if (house.MaxLevel == house.Level)
         {
             upgradeBut.SetActive(false);
             upgrade_info.SetActive(false);
-            quantity_text.SetText(house.crabAmount.ToString());
+            quantity_text.SetText(house.CrabAmount.ToString());
         }
         else 
         {
-            if (inv.Pearls >= curHouse.pearlCost && inv.Shells >= curHouse.shellCost)
+            if (inv.Pearls >= curHouse.PearlCost && inv.Shells >= curHouse.ShellCost)
             {
                 upgradeBut.SetActive(true);
                 upgrade.interactable = true;
@@ -49,13 +49,13 @@ public class InfoBar_Manager : MonoBehaviour
             }
             upgrade_info.SetActive(true);
             House newHouse = HDB.GetNextHouse(house);
-            cost_text.SetText(newHouse.shellCost.ToString() + "          " + newHouse.pearlCost.ToString());
-            quantity_text.SetText(house.crabAmount.ToString()+" -> "+newHouse.crabAmount.ToString());
+            cost_text.SetText(newHouse.ShellCost.ToString() + "          " + newHouse.PearlCost.ToString());
+            quantity_text.SetText(house.CrabAmount.ToString()+" -> "+newHouse.CrabAmount.ToString());
 
         }
-        house_sprite.sprite = house.houseSprite;
-        level_text.SetText("Lv."+house.level.ToString());
-        name_text.SetText(house.name);
+        house_sprite.sprite = house.Sprite;
+        level_text.SetText("Lv."+house.Level.ToString());
+        name_text.SetText(house.Name);
         
         curHouse = house;
     }
@@ -66,7 +66,7 @@ public class InfoBar_Manager : MonoBehaviour
         inv.UpdateHouse(curHouse, newHouse);
         Update_Info(newHouse);
         inventory.RefreshInv();
-        inv.AddPearls(-newHouse.pearlCost);
-        inv.AddShells(-newHouse.shellCost);
+        inv.AddPearls(-newHouse.PearlCost);
+        inv.AddShells(-newHouse.ShellCost);
     }
 }

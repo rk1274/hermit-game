@@ -4,18 +4,18 @@ using UnityEngine;
 [System.Serializable]
 public class House
 {
-    public Sprite houseSprite;
-    public string name;
-    public bool inUse;
+    public Sprite Sprite;
+    public string Name;
+    public bool InUse;
 
-    public int shellCost;
-    public int pearlCost;
-    public int crabAmount;
+    public int ShellCost;
+    public int PearlCost;
+    public int CrabAmount;
 
-    public int max_level;
-    public int level;
+    public int MaxLevel;
+    public int Level;
 
-    public object Shallowcopy()
+    public object ShallowCopy()
     {
         return this.MemberwiseClone();
     }

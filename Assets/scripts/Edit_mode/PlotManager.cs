@@ -42,7 +42,7 @@ public class PlotManager : MonoBehaviour
         {
             newPlot = PDB.GetPlot(index);
 
-            cost_text.SetText(newPlot.shellCost.ToString() + "          " + newPlot.pearlCost.ToString());
+            cost_text.SetText(newPlot.ShellCost.ToString() + "          " + newPlot.PearlCost.ToString());
         }
         else
         {
@@ -52,11 +52,11 @@ public class PlotManager : MonoBehaviour
 
     public void Buy()
     {
-        if(inventory.Shells >= newPlot.shellCost && inventory.Pearls >= newPlot.pearlCost)
+        if(inventory.Shells >= newPlot.ShellCost && inventory.Pearls >= newPlot.PearlCost)
         {
             inventory.AddPlot(newPlot);
-            inventory.AddShells(-newPlot.shellCost);
-            inventory.AddPearls(-newPlot.pearlCost);
+            inventory.AddShells(-newPlot.ShellCost);
+            inventory.AddPearls(-newPlot.PearlCost);
 
             DisplayPlots();
             SetShopPanel();

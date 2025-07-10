@@ -18,10 +18,10 @@ public class NewCrabManager : MonoBehaviour
         Item crabItem = chosenItems.Crab;
 
         Debug.Log("CRAB FOUND!");
-        Crab crab = crabDB.GetCrab(crabItem.name);
+        Crab crab = crabDB.GetCrab(crabItem.Name);
 
-        body.GetComponent<SpriteRenderer>().sprite = crab.body.sprite;
-        shell.GetComponent<SpriteRenderer>().sprite = crab.shell.sprite;
+        body.GetComponent<SpriteRenderer>().sprite = crab.Body.Sprite;
+        shell.GetComponent<SpriteRenderer>().sprite = crab.Shell.Sprite;
     }
 
     public void Discard()

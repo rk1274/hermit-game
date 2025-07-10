@@ -26,9 +26,9 @@ public class ItemDatabase : ScriptableObject
     {
         foreach (Item foundItem in items)
         {
-            if (foundItem.name == itemName)
+            if (foundItem.Name == itemName)
             {
-                foundItem.active = true;
+                foundItem.Active = true;
                 activeItems.Add(foundItem);
             }
         }
@@ -52,15 +52,15 @@ public class ItemDatabase : ScriptableObject
 
         foreach (Item item in items)
         {
-            string[] nameParts = item.name.Split('_');
+            string[] nameParts = item.Name.Split('_');
             if (nameParts.Length > 1 && nameParts[1] != "n")
             {
-                item.active = false;
+                item.Active = false;
 
                 continue;
             }
 
-            item.active = true;
+            item.Active = true;
             activeItems.Add(item);
         }
     }

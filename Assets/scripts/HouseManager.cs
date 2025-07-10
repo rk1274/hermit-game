@@ -45,7 +45,7 @@ public class HouseManager : MonoBehaviour
 
         for (int i = 1; i < playerInventory.HouseCount; i++)
         {
-            if(playerInventory.GetHouse(i).inUse == false)
+            if(playerInventory.GetHouse(i).InUse == false)
             {
                 return false;
             }
@@ -66,7 +66,7 @@ public class HouseManager : MonoBehaviour
             selectedOption = 0;
         }
 
-        if (playerInventory.GetHouse(selectedOption).inUse)
+        if (playerInventory.GetHouse(selectedOption).InUse)
         {
             NextOption();
             Debug.Log(":p");
@@ -90,7 +90,7 @@ public class HouseManager : MonoBehaviour
             selectedOption = playerInventory.HouseCount - 1;
         }
 
-        if (playerInventory.GetHouse(selectedOption).inUse)
+        if (playerInventory.GetHouse(selectedOption).InUse)
         {
             BackOption();
             Debug.Log(":p");
@@ -104,7 +104,7 @@ public class HouseManager : MonoBehaviour
     private void UpdateHouse(int selectedOption)
     {
         House house = playerInventory.GetHouse(selectedOption);
-        artworkSprite.sprite = house.houseSprite;
+        artworkSprite.sprite = house.Sprite;
 
     }
 
@@ -115,7 +115,7 @@ public class HouseManager : MonoBehaviour
         playerInventory.RemoveCapacity(selectedOption);
 
         // TODO - make a 'inUse' function for playerinv
-        playerInventory.GetHouse(selectedOption).inUse = false;
+        playerInventory.GetHouse(selectedOption).InUse = false;
     }
 
     private void Save()
@@ -127,13 +127,13 @@ public class HouseManager : MonoBehaviour
     {
         if(selectedOption != 0)
         {
-            if (playerInventory.GetHouse(selectedOption).name.Equals("flame_tree_01") || playerInventory.GetHouse(selectedOption).name.Equals("flame_tree_02"))
+            if (playerInventory.GetHouse(selectedOption).Name.Equals("flame_tree_01") || playerInventory.GetHouse(selectedOption).Name.Equals("flame_tree_02"))
             {
                 Debug.Log("here");
                 itemDB.SetActive("crab_s_fire");
             }
             playerInventory.AddCapacity(selectedOption);
-            playerInventory.GetHouse(selectedOption).inUse = true;
+            playerInventory.GetHouse(selectedOption).InUse = true;
         }
         SceneManager.LoadScene(sceneID);
     }

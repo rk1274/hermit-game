@@ -9,5 +9,5 @@ public class PlotDatabase : ScriptableObject
 
     public int PlotCount => plots.Length;
     public Plot GetPlot(int index) => plots[index];
-    public House GetPlotHouse(int index) =>  plots[index].house;
+    public House GetPlotHouse(int index) =>  plots[index].House;
 }

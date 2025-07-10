@@ -5,8 +5,7 @@ using UnityEngine;
 
 public class Item
 {   
-    public Sprite sprite;
-    public string name;
-
-    public bool active;
+    public Sprite Sprite;
+    public string Name;
+    public bool Active;
 }

@@ -55,7 +55,7 @@ public class ItemManager : MonoBehaviour
     {
         Item curItem = itemDB.GetActiveItem(RandomNum());
         
-        curButton.GetComponent<Image>().sprite = curItem.sprite;
+        curButton.GetComponent<Image>().sprite = curItem.Sprite;
 
         return curItem;
     }
@@ -81,7 +81,7 @@ public class ItemManager : MonoBehaviour
         if (itemCount < 5)
         {
             Item butItem = butDict[button];
-            string[] name = butItem.name.Split('_');
+            string[] name = butItem.Name.Split('_');
 
             if (name[0] == "crab" && inv.Capacity <= internalCrabs)
             {

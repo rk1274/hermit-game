@@ -38,7 +38,7 @@ public class ChosenItems : ScriptableObject
         if (index >= 0 && index < MaxItems)
         {
             items[index] = item;
-            Debug.Log($"SetItem: Set item at index {index} to {item?.name ?? "null"}");
+            Debug.Log($"SetItem: Set item at index {index} to {item?.Name ?? "null"}");
         }
         else
         {

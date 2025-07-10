@@ -5,6 +5,6 @@ using UnityEngine;
 
 public class Body
 {
-    public Sprite sprite;
+    public Sprite Sprite;
 }
 

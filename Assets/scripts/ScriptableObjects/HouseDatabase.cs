@@ -25,7 +25,7 @@ public class HouseDatabase : ScriptableObject
     {
         foreach (House house in houses)
         {
-            if (house != null && house.name == name)
+            if (house != null && house.Name == name)
                 return house;
         }
 
@@ -37,13 +37,13 @@ public class HouseDatabase : ScriptableObject
     {
         for (int i = 0; i < HouseCount - 1; i++)
         {
-            if (houses[i] != null && houses[i].name == currentHouse.name)
+            if (houses[i] != null && houses[i].Name == currentHouse.Name)
             {
                 return houses[i + 1];
             }
         }
 
-        Debug.LogWarning($"GetNextHouse: '{currentHouse?.name}' is the last house or not found.");
+        Debug.LogWarning($"GetNextHouse: '{currentHouse?.Name}' is the last house or not found.");
         return null;
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Crab
 {
-    public Body body;
-    public Shell shell;
-    public string name;
+    public Body Body;
+    public Shell Shell;
+    public string Name;
 }
