@@ -26,27 +26,26 @@ public class AfterWalkLoader : MonoBehaviour
                 if (name[0] == "shell")
                 {
                     Debug.Log("SHELL FOUND!");
-                    inventory.addShells(1);
+                    inventory.AddShells(1);
                 }
                 else if (name[0] == "pearl")
                 {
                     Debug.Log("PEARL FOUND!");
-                    inventory.addPearls(1);
+                    inventory.AddPearls(1);
                 }
                 else if (name[0] == "crab")
                 {
                     Debug.Log("CRAB FOUND!");
                     Crab crab = crabDB.GetCrab(items[i].name);
-                    inventory.addCrab(crab);
-
+                    inventory.AddCrab(crab);
                 }
             }
 
         }
 
-        shells.text = inventory.shells.ToString();
-        pearls.text = inventory.pearls.ToString();
-        crabs.SetText(inventory.crabs.Count.ToString()+" / "+inventory.capacity);
+        shells.text = inventory.Shells.ToString();
+        pearls.text = inventory.Pearls.ToString();
+        crabs.SetText(inventory.CrabCount.ToString()+" / "+inventory.Capacity);
 
         chosenItems.RemoveAllItems();
 

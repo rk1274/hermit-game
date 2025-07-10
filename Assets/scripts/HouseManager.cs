@@ -30,7 +30,7 @@ public class HouseManager : MonoBehaviour
         }
         else
         {
-            if (!PlayerPrefs.HasKey(plot.getPlot()))
+            if (!PlayerPrefs.HasKey(plot.CurrentPlot))
             {
                 selectedOption = 0;
             }
@@ -110,14 +110,17 @@ public class HouseManager : MonoBehaviour
 
     private void Load()
     {
-        selectedOption = PlayerPrefs.GetInt(plot.getPlot());
-        playerInventory.removeCapacity(selectedOption);
+        selectedOption = PlayerPrefs.GetInt(plot.CurrentPlot);
+
+        playerInventory.RemoveCapacity(selectedOption);
+
+        // TODO - make a 'inUse' function for playerinv
         playerInventory.GetHouse(selectedOption).inUse = false;
     }
 
     private void Save()
     {
-        PlayerPrefs.SetInt(plot.getPlot(), selectedOption);
+        PlayerPrefs.SetInt(plot.CurrentPlot, selectedOption);
     }
 
     public void ChangeScene(string sceneID)
@@ -129,7 +132,7 @@ public class HouseManager : MonoBehaviour
                 Debug.Log("here");
                 itemDB.SetActive("crab_s_fire");
             }
-            playerInventory.addCapacity(selectedOption);
+            playerInventory.AddCapacity(selectedOption);
             playerInventory.GetHouse(selectedOption).inUse = true;
         }
         SceneManager.LoadScene(sceneID);

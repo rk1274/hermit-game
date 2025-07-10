@@ -47,15 +47,15 @@ public class Inventory_Manager : MonoBehaviour
     // used for testing
     public void AddHouses()
     {
-        inv.addHouse(house_db.GetHouse(1));
-        inv.addHouse(house_db.GetHouse(2));
-        inv.addHouse(house_db.GetHouse(3));
-        inv.addHouse(house_db.GetHouse(4));
-        inv.addHouse(house_db.GetHouse(5));
-        inv.addHouse(house_db.GetHouse(6));
-        inv.addHouse(house_db.GetHouse(7));
-        inv.addHouse(house_db.GetHouse(8));
-        inv.addHouse(house_db.GetHouse(9));
+        inv.AddHouse(house_db.GetHouse(1));
+        inv.AddHouse(house_db.GetHouse(2));
+        inv.AddHouse(house_db.GetHouse(3));
+        inv.AddHouse(house_db.GetHouse(4));
+        inv.AddHouse(house_db.GetHouse(5));
+        inv.AddHouse(house_db.GetHouse(6));
+        inv.AddHouse(house_db.GetHouse(7));
+        inv.AddHouse(house_db.GetHouse(8));
+        inv.AddHouse(house_db.GetHouse(9));
     }
 
 }

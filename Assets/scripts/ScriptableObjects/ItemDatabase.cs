@@ -5,25 +5,25 @@ using UnityEngine;
 [CreateAssetMenu]
 public class ItemDatabase : ScriptableObject
 {
-    public Item[] items;
-    public List<Item> activeItems;
+    [SerializeField] private Item[] items;
+    [SerializeField] private List<Item> activeItems;
 
-    public int ItemCount
-    {
-        get { return items.Length; }
-    }
-
-    public int ActiveItemCount
-    {
-        get { return activeItems.Count; }
-    }
+    public int ItemCount => items.Length;
+    public int ActiveItemCount => activeItems.Count;
 
     public Item GetItem(int index)
     {
+        if (index < 0 || index >= ItemCount)
+        {
+            Debug.LogWarning($"Item index {index} is out of range.");
+            return null;
+        }
+
         return items[index];
     }
 
-    public void SetActive(string itemName){
+    public void SetActive(string itemName) 
+    {
         foreach (Item foundItem in items)
         {
             if (foundItem.name == itemName)
@@ -34,28 +34,34 @@ public class ItemDatabase : ScriptableObject
         }
     }
 
-    public Item GetActiveItem(int index)
+    public Item GetActiveItem(int index) 
     {
-        Debug.Log(index + "..." + ActiveItemCount);
+        if (index < 0 || index >= ActiveItemCount) 
+        {
+            Debug.LogWarning($"Active item index {index} is out of range.");
+
+            return null;
+        }
+
         return activeItems[index];
     }
 
-    public void Reset(){
-        Debug.Log("Resetttttinggg");
+    public void Reset()
+    {
+        activeItems.Clear();
 
-        activeItems = new List<Item>();
-
-        for (int i = 0; i < ItemCount; i++){
-            string[] name = items[i].name.Split('_');
-
-            if (name[1] == "n"){
-                items[i].active = true;
-                activeItems.Add(items[i]);
+        foreach (Item item in items)
+        {
+            string[] nameParts = item.name.Split('_');
+            if (nameParts.Length > 1 && nameParts[1] != "n")
+            {
+                item.active = false;
 
                 continue;
             }
-                
-            items[i].active = false;
+
+            item.active = true;
+            activeItems.Add(item);
         }
     }
 }

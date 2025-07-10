@@ -5,22 +5,9 @@ using UnityEngine;
 [CreateAssetMenu]
 public class PlotDatabase : ScriptableObject
 {
-    public Plot[] plots;
+    [SerializeField] private Plot[] plots;
 
-
-    public int PlotCount
-    {
-        get { return plots.Length; }
-    }
-
-    public Plot GetPlot(int index)
-    {
-        return plots[index];
-    }
-
-    public House GetPlotHouse(int index)
-    {
-        return plots[index].house;
-    }
-    
+    public int PlotCount => plots.Length;
+    public Plot GetPlot(int index) => plots[index];
+    public House GetPlotHouse(int index) =>  plots[index].house;
 }

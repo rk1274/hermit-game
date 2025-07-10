@@ -51,12 +51,12 @@ public class ShopButtonController : MonoBehaviour
 
     public void UpdateInventory(int neededShell, int neededPearl, House house)
     {
-        if (playerInventory.shells >= -neededShell && playerInventory.pearls >= -neededPearl)
+        if (playerInventory.Shells >= -neededShell && playerInventory.Pearls >= -neededPearl)
         {
-            playerInventory.addShells(neededShell);
-            playerInventory.addPearls(neededPearl);
+            playerInventory.AddShells(neededShell);
+            playerInventory.AddPearls(neededPearl);
 
-            playerInventory.addHouse(house);
+            playerInventory.AddHouse(house);
             Debug.Log("Purchased!!");
         }
         else

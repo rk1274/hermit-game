@@ -35,9 +35,7 @@ public class ItemManager : MonoBehaviour
         butDict = new Dictionary<Button, Item>(itemDB.ItemCount);
         itemCount = 0;
 
-        internalCrabs = inv.crabs.Count;
-
-        // beach_button_controller b1 = buttons[1].GetComponent<beach_button_controller>();
+        internalCrabs = inv.CrabCount;
 
         chosenItems.RemoveAllItems();
 
@@ -84,8 +82,8 @@ public class ItemManager : MonoBehaviour
         {
             Item butItem = butDict[button];
             string[] name = butItem.name.Split('_');
-            //Debug.Log("inv cap:"+inv.capacity + " - int crabs:" + internalCrabs.ToString() + "      num crabs currently" + inv.crabs.Count.ToString());
-            if (name[0] == "crab" && inv.capacity <= internalCrabs)
+
+            if (name[0] == "crab" && inv.Capacity <= internalCrabs)
             {
                 Debug.Log("no space for crab");
             }

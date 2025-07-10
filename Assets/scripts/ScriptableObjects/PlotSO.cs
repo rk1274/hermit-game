@@ -6,17 +6,14 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Data", menuName = "Examples/PlotSO")]
 public class PlotSO : ScriptableObject
 {
-    private string currPlot;
+    [SerializeField] private string currPlot;
+    [SerializeField] private Sprite[] plotSprites;
 
-    public Sprite[] plotSprites;
+    public Sprite[] PlotSprites => plotSprites;
 
-    public void setPlot(string plotNum)
+    public string CurrentPlot
     {
-        currPlot = plotNum;
-    }
-
-    public string getPlot()
-    {
-        return currPlot;
+        get => currPlot;
+        set => currPlot = value;
     }
 }

@@ -6,93 +6,82 @@ using UnityEngine;
 
 public class PlayerInventory : ScriptableObject
 {
-    public int shells = 1;
-    public int pearls = 1;
-    public int capacity;
+    [Header("Resources")]
+    [SerializeField] private int shells = 1;
+    [SerializeField] private int pearls = 1;
+    [SerializeField] private int capacity = 0;
 
-    public List<Crab> crabs;
+    [Header("Owned Objects")]
+    [SerializeField] private List<Crab> crabs = new List<Crab>();
+    [SerializeField] private List<House> houses = new List<House>();
+    [SerializeField] private List<Plot> plots = new List<Plot>();
 
-    public List<House> houses;
+    public int Shells => shells;
+    public int Pearls => pearls;
+    public int Capacity => capacity;
+    public List<Crab> Crabs => crabs;
 
-    public List<Plot> plots;
+    public int HouseCount => houses.Count;
+    public int CrabCount => crabs.Count;
+    public int PlotCount => plots.Count;
 
-    public void addCrab(Crab crab)
-    {
-        crabs.Add(crab);
-    }
+    public void AddCrab(Crab crab) => crabs.Add(crab);
+    public void AddPlot(Plot plot) => plots.Add(plot);
 
-    public void addHouse(House house)
+    public void AddShells(int amount) => shells += amount;
+    public void AddPearls(int amount) => pearls += amount;
+
+    public void AddCapacity(House house) => capacity += house.crabAmount;
+    public void RemoveCapacity(House house) => capacity -= house.crabAmount;
+
+    public void AddCapacity(int index) => capacity += GetHouse(index).crabAmount;
+    public void RemoveCapacity(int index) => capacity -= GetHouse(index).crabAmount;
+
+    public void AddHouse(House house)
     {
         houses.Add((House)house.Shallowcopy());
+        AddCapacity(house);
     }
 
-    public void addPlot(Plot plot)
+    public void UpdateHouse(House current, House updated)
     {
-        plots.Add(plot);
-    }
+        int index = houses.IndexOf(current);
 
-    public void UpdateHouse(House curHouse, House newHouse)
-    {   
-        if (houses[houses.IndexOf(curHouse)].inUse == true)
+        if (index == -1)
         {
-            removeCapacity(curHouse);
-            addCapacity(newHouse);
-            int index = houses.IndexOf(curHouse);
-            Debug.Log(index);
-            houses[houses.IndexOf(curHouse)] = (House)newHouse.Shallowcopy();
-            GetHouse(index).inUse = true;
+            Debug.LogWarning("House to update not found in inventory.");
+            return;
         }
-        else
-        {
-            houses[houses.IndexOf(curHouse)] = (House)newHouse.Shallowcopy();
-        }
-    }
 
-    public int HouseCount
-    {
-        get { return houses.Count; }
+        bool wasPreviouslyInUse = houses[index].inUse;
+
+        if (wasPreviouslyInUse)
+        {
+            RemoveCapacity(houses[index]);
+            AddCapacity(updated);
+        }
+
+        houses[index] = (House)updated.Shallowcopy();
+        houses[index].inUse = wasPreviouslyInUse;
     }
 
     public House GetHouse(int index)
     {
-        try
+        if (index < 0 || index >= houses.Count)
         {
-            return houses[index];
-        }
-        catch
-        {
-            Debug.Log(index + " :p "+HouseCount);
+            Debug.LogWarning($"Invalid house index: {index} / Count: {HouseCount}");
             return null;
         }
+        return houses[index];
     }
 
-    public void addShells(int num)
+    public void ResetInventory()
     {
-        shells = shells + num;
+        crabs.Clear();
+        plots.Clear();
+        houses.Clear();
+        capacity = 0;
+        shells = 0;
+        pearls = 0;
     }
-    public void addPearls(int num)
-    {
-        pearls = pearls + num;
-    }
-
-    public void addCapacity(int num)
-    {
-        capacity = capacity + GetHouse(num).crabAmount;
-    }
-
-    public void removeCapacity(int num)
-    {
-        capacity = capacity - GetHouse(num).crabAmount;
-    }
-
-    public void addCapacity(House house)
-    {
-        capacity = capacity + house.crabAmount;
-    }
-
-    public void removeCapacity(House house)
-    {
-        capacity = capacity - house.crabAmount;
-    }
-
 }

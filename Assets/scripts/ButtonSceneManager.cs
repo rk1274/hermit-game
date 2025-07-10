@@ -8,21 +8,17 @@ public class ButtonSceneManager : MonoBehaviour
 {
     [SerializeField] private PlotSO plotSO;
 
-
     public void LoadScene(string sceneName)
     {   
-
-
         if (PlayerPrefs.GetInt("edit_isActive") == 1)
         {
-            plotSO.setPlot(EventSystem.current.currentSelectedGameObject.name);
+            plotSO.CurrentPlot = EventSystem.current.currentSelectedGameObject.name;
             SceneManager.LoadScene(sceneName);
         }
         else
         {
             Debug.Log("Edit not active, cannot click.");
         }
-
     }
 
 }

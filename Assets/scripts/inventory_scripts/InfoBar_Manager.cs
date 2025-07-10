@@ -37,7 +37,7 @@ public class InfoBar_Manager : MonoBehaviour
         }
         else 
         {
-            if (inv.pearls >= curHouse.pearlCost && inv.shells >= curHouse.shellCost)
+            if (inv.Pearls >= curHouse.pearlCost && inv.Shells >= curHouse.shellCost)
             {
                 upgradeBut.SetActive(true);
                 upgrade.interactable = true;
@@ -66,7 +66,7 @@ public class InfoBar_Manager : MonoBehaviour
         inv.UpdateHouse(curHouse, newHouse);
         Update_Info(newHouse);
         inventory.RefreshInv();
-        inv.addPearls(-newHouse.pearlCost);
-        inv.addShells(-newHouse.shellCost);
+        inv.AddPearls(-newHouse.pearlCost);
+        inv.AddShells(-newHouse.shellCost);
     }
 }

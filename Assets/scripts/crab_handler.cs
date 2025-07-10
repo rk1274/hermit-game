@@ -13,7 +13,7 @@ public class crab_handler : MonoBehaviour
     
     void Start()
     {
-        crabs = inventory.crabs;
+        crabs = inventory.Crabs;
         if(crabs.Count > 0)
         {
             for (int i = 0; i < crabs.Count; i++)
@@ -24,7 +24,6 @@ public class crab_handler : MonoBehaviour
                 crabGOs[i].SetActive(true);
             }
         }
-
     }
 
     private void UpdateBodySprite(GameObject go, Crab crab)

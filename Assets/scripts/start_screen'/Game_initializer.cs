@@ -12,15 +12,11 @@ public class Game_initializer : MonoBehaviour
 
     public void NewGame()
     {
-        inv.houses.Clear();
-        inv.crabs.Clear();
-        inv.plots.Clear();
-        inv.addHouse(hDB.GetHouse(0));
-        inv.addHouse(hDB.GetHouse(1));
-        inv.addPlot(pDB.GetPlot(0));
-        inv.capacity = 0;
-        inv.shells = 0;
-        inv.pearls = 0;
+        inv.ResetInventory();
+
+        inv.AddHouse(hDB.GetHouse(0));
+        inv.AddHouse(hDB.GetHouse(1));
+        inv.AddPlot(pDB.GetPlot(0));
 
         iDB.Reset();
 

@@ -26,7 +26,7 @@ public class PlotManager : MonoBehaviour
 
     public void DisplayPlots()
     {
-        for (int i = 0; i < inventory.plots.Count; i++)
+        for (int i = 0; i < inventory.PlotCount; i++)
         {
             plotButtons[i].SetActive(true);
             plotSprites[i].SetActive(true);
@@ -36,7 +36,7 @@ public class PlotManager : MonoBehaviour
 
     public void SetShopPanel()
     {
-        int index = inventory.plots.Count;
+        int index = inventory.PlotCount;
 
         if(index < PDB.PlotCount)
         {
@@ -52,11 +52,11 @@ public class PlotManager : MonoBehaviour
 
     public void Buy()
     {
-        if(inventory.shells >= newPlot.shellCost && inventory.pearls >= newPlot.pearlCost)
+        if(inventory.Shells >= newPlot.shellCost && inventory.Pearls >= newPlot.pearlCost)
         {
-            inventory.addPlot(newPlot);
-            inventory.addShells(-newPlot.shellCost);
-            inventory.addPearls(-newPlot.pearlCost);
+            inventory.AddPlot(newPlot);
+            inventory.AddShells(-newPlot.shellCost);
+            inventory.AddPearls(-newPlot.pearlCost);
 
             DisplayPlots();
             SetShopPanel();
