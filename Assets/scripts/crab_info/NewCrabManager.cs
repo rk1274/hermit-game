@@ -15,7 +15,7 @@ public class NewCrabManager : MonoBehaviour
 
     public void SetCrab()
     {
-        Item crabItem = chosenItems.GetCrab();
+        Item crabItem = chosenItems.Crab;
 
         Debug.Log("CRAB FOUND!");
         Crab crab = crabDB.GetCrab(crabItem.name);

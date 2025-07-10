@@ -5,16 +5,8 @@ using UnityEngine;
 [CreateAssetMenu]
 public class BodyDatabase : ScriptableObject
 {
-    public Body[] bodies;
+    [SerializeField] private Body[] bodies;
 
-
-    public int BodyCount
-    {
-        get { return bodies.Length; }
-    }
-
-    public Body GetBody(int index)
-    {
-        return bodies[index];
-    }
+    public int BodyCount => bodies.Length;
+    public Body GetBody(int index) => bodies[index];
 }

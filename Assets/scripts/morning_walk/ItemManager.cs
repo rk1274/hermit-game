@@ -37,7 +37,7 @@ public class ItemManager : MonoBehaviour
 
         internalCrabs = inv.CrabCount;
 
-        chosenItems.RemoveAllItems();
+        chosenItems.ClearAllItems();
 
         foreach (Button button in buttons)
         {

@@ -6,44 +6,49 @@ using UnityEngine;
 [CreateAssetMenu]
 public class ChosenItems : ScriptableObject
 {
-    public Item[] items = new Item[5];
+    private const int MaxItems = 5;
 
-    public Item potentialCrab;
+    [SerializeField] private Item[] items = new Item[5];
+    [SerializeField] private Item potentialCrab;
 
-    public int ItemCount
+    public int ItemCount => items.Length;
+
+    public Item[] Items => items;
+    public Item Crab => potentialCrab;
+
+    public void ClearAllItems()
     {
-        get { return items.Length; }
-    }
-
-    public Item[] GetItems()
-    {
-        return items;
-    }
-
-    public void RemoveAllItems()
-    {
-        items = new Item[5];
+        items = new Item[MaxItems];
     }
 
     public void RemoveItem(int index)
     {
-        items[index] = null;
+        if (index >= 0 && index < MaxItems)
+        {
+            items[index] = null;
+        }
+        else
+        {
+            Debug.LogWarning($"RemoveItem: Invalid index {index}");
+        }
     }
 
     public void SetItem(Item item, int index)
     {
-        items[index] = item;
-        Debug.Log("ITEM:"+index);
+        if (index >= 0 && index < MaxItems)
+        {
+            items[index] = item;
+            Debug.Log($"SetItem: Set item at index {index} to {item?.name ?? "null"}");
+        }
+        else
+        {
+            Debug.LogWarning($"SetItem: Invalid index {index}");
+        }
     }
 
     public void SetCrab(Item crab)
     {
         potentialCrab = crab;
-    }
-
-    public Item GetCrab()
-    {
-        return potentialCrab;
     }
 
     public void ClearCrab()

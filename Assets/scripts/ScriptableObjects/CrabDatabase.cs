@@ -5,13 +5,9 @@ using UnityEngine;
 [CreateAssetMenu]
 public class CrabDatabase : ScriptableObject
 {
-    public Crab[] crabs;
+    [SerializeField] private Crab[] crabs;
 
-
-    public int crabCount
-    {
-        get { return crabs.Length; }
-    }
+    public int crabCount => crabs.Length;
 
     public Crab GetCrab(string name)
     {
@@ -22,7 +18,7 @@ public class CrabDatabase : ScriptableObject
                 return crab;
             }
         }
+
         return null;
     }
-
 }

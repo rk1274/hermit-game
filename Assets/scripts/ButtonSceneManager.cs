@@ -10,15 +10,13 @@ public class ButtonSceneManager : MonoBehaviour
 
     public void LoadScene(string sceneName)
     {   
-        if (PlayerPrefs.GetInt("edit_isActive") == 1)
-        {
-            plotSO.CurrentPlot = EventSystem.current.currentSelectedGameObject.name;
-            SceneManager.LoadScene(sceneName);
-        }
-        else
+        if (PlayerPrefs.GetInt("edit_isActive") != 1)
         {
             Debug.Log("Edit not active, cannot click.");
         }
+
+        plotSO.CurrentPlot = EventSystem.current.currentSelectedGameObject.name;
+        SceneManager.LoadScene(sceneName);
     }
 
 }

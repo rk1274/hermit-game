@@ -16,7 +16,7 @@ public class AfterWalkLoader : MonoBehaviour
 
     private void Start()
     {
-        Item[] items = chosenItems.GetItems();
+        Item[] items = chosenItems.Items;
 
         for (int i = 0; i < items.Length; i++)
         {
@@ -47,7 +47,7 @@ public class AfterWalkLoader : MonoBehaviour
         pearls.text = inventory.Pearls.ToString();
         crabs.SetText(inventory.CrabCount.ToString()+" / "+inventory.Capacity);
 
-        chosenItems.RemoveAllItems();
+        chosenItems.ClearAllItems();
 
     }
 }

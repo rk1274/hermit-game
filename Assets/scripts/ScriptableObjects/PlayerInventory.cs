@@ -40,7 +40,6 @@ public class PlayerInventory : ScriptableObject
     public void AddHouse(House house)
     {
         houses.Add((House)house.Shallowcopy());
-        AddCapacity(house);
     }
 
     public void UpdateHouse(House current, House updated)

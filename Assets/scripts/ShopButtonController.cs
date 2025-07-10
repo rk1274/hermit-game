@@ -16,35 +16,35 @@ public class ShopButtonController : MonoBehaviour
 
     public void SelectCoco()
     {
-        House curHouse = houseDB.NameGetHouse("coco_01");
+        House curHouse = houseDB.GetHouseByName("coco_01");
 
         UpdateInventory(-curHouse.shellCost, -curHouse.pearlCost, curHouse);
     }
 
     public void SelectLog()
     {
-        House curHouse = houseDB.NameGetHouse("log_01");
+        House curHouse = houseDB.GetHouseByName("log_01");
 
         UpdateInventory(-curHouse.shellCost, -curHouse.pearlCost, curHouse);
     }
 
     public void SelectGlass()
     {
-        House curHouse = houseDB.NameGetHouse("glass_01");
+        House curHouse = houseDB.GetHouseByName("glass_01");
 
         UpdateInventory(-curHouse.shellCost, -curHouse.pearlCost, curHouse);
     }
 
     public void SelectBall()
     {
-        House curHouse = houseDB.NameGetHouse("beach_ball_01");
+        House curHouse = houseDB.GetHouseByName("beach_ball_01");
 
         UpdateInventory(-curHouse.shellCost, -curHouse.pearlCost, curHouse);
     }
 
     public void SelectFlame()
     {
-        House curHouse = houseDB.NameGetHouse("flame_tree_01");
+        House curHouse = houseDB.GetHouseByName("flame_tree_01");
 
         UpdateInventory(-curHouse.shellCost, -curHouse.pearlCost, curHouse);
     }
