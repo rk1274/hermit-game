@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ShellDatabase
   m_EditorClassIdentifier: 
   shells:
-  - sprite: {fileID: 21300000, guid: 20446c3951b86d241b36aee6a6765912, type: 3}
-  - sprite: {fileID: 21300000, guid: 29800fb9b305974479a5c7aec5a49406, type: 3}
-  - sprite: {fileID: 21300000, guid: 6ef1e67ef78ac674d97f69eceaf7d42c, type: 3}
-  - sprite: {fileID: 21300000, guid: 2ed4f29d17fdfa542ad7e5d0245bd9a9, type: 3}
+  - Sprite: {fileID: 21300000, guid: 20446c3951b86d241b36aee6a6765912, type: 3}
+  - Sprite: {fileID: 21300000, guid: 29800fb9b305974479a5c7aec5a49406, type: 3}
+  - Sprite: {fileID: 21300000, guid: 6ef1e67ef78ac674d97f69eceaf7d42c, type: 3}
+  - Sprite: {fileID: 21300000, guid: 2ed4f29d17fdfa542ad7e5d0245bd9a9, type: 3}

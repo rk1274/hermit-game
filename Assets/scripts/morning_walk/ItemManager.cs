@@ -32,6 +32,12 @@ public class ItemManager : MonoBehaviour
 
     private void Start()
     {
+        if (itemDB.ActiveItemCount == 0)
+        {
+            Debug.LogWarning("Active items empty at start, calling Reset() to populate.");
+            itemDB.Reset();
+        }
+
         butDict = new Dictionary<Button, Item>(itemDB.ItemCount);
         itemCount = 0;
 
@@ -47,17 +53,20 @@ public class ItemManager : MonoBehaviour
 
     private int RandomNum()
     {
-        float num = Random.Range(0, itemDB.ActiveItemCount);
-        return System.Convert.ToInt32(num);
+        return Random.Range(0, itemDB.ActiveItemCount);
     }
      
     private Item UpdateButton(Button curButton)
     {
         Item curItem = itemDB.GetActiveItem(RandomNum());
+    
+        Image buttonImage = curButton.GetComponent<Image>();
         
-        curButton.GetComponent<Image>().sprite = curItem.Sprite;
+
+        buttonImage.sprite = curItem.Sprite;
 
         return curItem;
+
     }
 
     public void AddNewSelection(Button button)

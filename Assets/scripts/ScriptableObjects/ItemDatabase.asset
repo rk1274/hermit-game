@@ -13,60 +13,61 @@ MonoBehaviour:
   m_Name: ItemDatabase
   m_EditorClassIdentifier: 
   items:
-  - sprite: {fileID: 179660192, guid: 04bbc284a33cabe49b1f6bd970227923, type: 3}
-    name: shell_n_orange
-    active: 1
-  - sprite: {fileID: 764889376, guid: 04bbc284a33cabe49b1f6bd970227923, type: 3}
-    name: shell_n_cyan
-    active: 1
-  - sprite: {fileID: 895171779, guid: 04bbc284a33cabe49b1f6bd970227923, type: 3}
-    name: shell_n_blue
-    active: 1
-  - sprite: {fileID: 577923279, guid: 04bbc284a33cabe49b1f6bd970227923, type: 3}
-    name: shell_n_pink
-    active: 1
-  - sprite: {fileID: 823789176, guid: 04bbc284a33cabe49b1f6bd970227923, type: 3}
-    name: shell_n_green
-    active: 1
-  - sprite: {fileID: -471999314, guid: da586a07d80ddce4bbe23ae1e3c28a76, type: 3}
-    name: pearl_n_cream
-    active: 1
-  - sprite: {fileID: 1692227370, guid: da586a07d80ddce4bbe23ae1e3c28a76, type: 3}
-    name: pearl_n_pink
-    active: 1
-  - sprite: {fileID: 83005148, guid: da586a07d80ddce4bbe23ae1e3c28a76, type: 3}
-    name: pearl_n_blue
-    active: 1
-  - sprite: {fileID: 1223316814, guid: c33ec72898d684d41ab153d013252a9f, type: 3}
-    name: crab_n_red_cream
-    active: 1
-  - sprite: {fileID: 1320634353, guid: c33ec72898d684d41ab153d013252a9f, type: 3}
-    name: crab_n_blue_dot
-    active: 1
-  - sprite: {fileID: -2033179858, guid: c33ec72898d684d41ab153d013252a9f, type: 3}
-    name: crab_n_green_red
-    active: 1
-  - sprite: {fileID: -781607335, guid: c33ec72898d684d41ab153d013252a9f, type: 3}
-    name: crab_n_purple_red
-    active: 1
-  - sprite: {fileID: 1367275357, guid: c33ec72898d684d41ab153d013252a9f, type: 3}
-    name: crab_n_grey_green
-    active: 1
-  - sprite: {fileID: 1223316814, guid: c33ec72898d684d41ab153d013252a9f, type: 3}
-    name: crab_n_red_dot
-    active: 1
-  - sprite: {fileID: -1438402211, guid: c33ec72898d684d41ab153d013252a9f, type: 3}
-    name: crab_n_yellow_green
-    active: 1
-  - sprite: {fileID: 1091613339, guid: c33ec72898d684d41ab153d013252a9f, type: 3}
-    name: crab_n_pink_cream
-    active: 1
-  - sprite: {fileID: 1320634353, guid: c33ec72898d684d41ab153d013252a9f, type: 3}
-    name: crab_n_blue_red
-    active: 1
-  - sprite: {fileID: -2033179858, guid: c33ec72898d684d41ab153d013252a9f, type: 3}
-    name: crab_n_green_cream
-    active: 1
-  - sprite: {fileID: 21300000, guid: 636a15f7c0a7c6d46bc42a23e64ee2ba, type: 3}
-    name: crab_s_fire
-    active: 0
+  - Sprite: {fileID: 179660192, guid: 04bbc284a33cabe49b1f6bd970227923, type: 3}
+    Name: shell_n_orange
+    Active: 1
+  - Sprite: {fileID: 764889376, guid: 04bbc284a33cabe49b1f6bd970227923, type: 3}
+    Name: shell_n_cyan
+    Active: 1
+  - Sprite: {fileID: 895171779, guid: 04bbc284a33cabe49b1f6bd970227923, type: 3}
+    Name: shell_n_blue
+    Active: 1
+  - Sprite: {fileID: 577923279, guid: 04bbc284a33cabe49b1f6bd970227923, type: 3}
+    Name: shell_n_pink
+    Active: 1
+  - Sprite: {fileID: 823789176, guid: 04bbc284a33cabe49b1f6bd970227923, type: 3}
+    Name: shell_n_green
+    Active: 1
+  - Sprite: {fileID: -471999314, guid: da586a07d80ddce4bbe23ae1e3c28a76, type: 3}
+    Name: pearl_n_cream
+    Active: 1
+  - Sprite: {fileID: 1692227370, guid: da586a07d80ddce4bbe23ae1e3c28a76, type: 3}
+    Name: pearl_n_pink
+    Active: 1
+  - Sprite: {fileID: 83005148, guid: da586a07d80ddce4bbe23ae1e3c28a76, type: 3}
+    Name: pearl_n_blue
+    Active: 1
+  - Sprite: {fileID: 1223316814, guid: c33ec72898d684d41ab153d013252a9f, type: 3}
+    Name: crab_n_red_cream
+    Active: 1
+  - Sprite: {fileID: 1320634353, guid: c33ec72898d684d41ab153d013252a9f, type: 3}
+    Name: crab_n_blue_dot
+    Active: 1
+  - Sprite: {fileID: -2033179858, guid: c33ec72898d684d41ab153d013252a9f, type: 3}
+    Name: crab_n_green_red
+    Active: 1
+  - Sprite: {fileID: -781607335, guid: c33ec72898d684d41ab153d013252a9f, type: 3}
+    Name: crab_n_purple_red
+    Active: 1
+  - Sprite: {fileID: 1367275357, guid: c33ec72898d684d41ab153d013252a9f, type: 3}
+    Name: crab_n_grey_green
+    Active: 1
+  - Sprite: {fileID: 1223316814, guid: c33ec72898d684d41ab153d013252a9f, type: 3}
+    Name: crab_n_red_dot
+    Active: 1
+  - Sprite: {fileID: -1438402211, guid: c33ec72898d684d41ab153d013252a9f, type: 3}
+    Name: crab_n_yellow_green
+    Active: 1
+  - Sprite: {fileID: 1091613339, guid: c33ec72898d684d41ab153d013252a9f, type: 3}
+    Name: crab_n_pink_cream
+    Active: 1
+  - Sprite: {fileID: 1320634353, guid: c33ec72898d684d41ab153d013252a9f, type: 3}
+    Name: crab_n_blue_red
+    Active: 1
+  - Sprite: {fileID: -2033179858, guid: c33ec72898d684d41ab153d013252a9f, type: 3}
+    Name: crab_n_green_cream
+    Active: 1
+  - Sprite: {fileID: 21300000, guid: 636a15f7c0a7c6d46bc42a23e64ee2ba, type: 3}
+    Name: crab_s_fire
+    Active: 0
+  ActiveItems: []

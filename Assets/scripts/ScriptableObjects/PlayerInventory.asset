@@ -12,46 +12,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 823fb15b8d515c649b2488fd569cace9, type: 3}
   m_Name: PlayerInventory
   m_EditorClassIdentifier: 
-  shells: 5
+  Shells: 5
   pearls: 2
   capacity: 16
   crabs:
-  - body:
-      sprite: {fileID: 21300000, guid: 5ee6add6a36786e47aa3733ce3212c2a, type: 3}
-    shell:
-      sprite: {fileID: 21300000, guid: 2ed4f29d17fdfa542ad7e5d0245bd9a9, type: 3}
-    name: crab_04
-  - body:
-      sprite: {fileID: 21300000, guid: b9a2c083f5660c341ab1193c749b08ef, type: 3}
-    shell:
-      sprite: {fileID: 21300000, guid: 20446c3951b86d241b36aee6a6765912, type: 3}
-    name: crab_02
-  - body:
-      sprite: {fileID: 21300000, guid: 9fb98f47154319d49a381fe43d7e5e2e, type: 3}
-    shell:
-      sprite: {fileID: 21300000, guid: 2ed4f29d17fdfa542ad7e5d0245bd9a9, type: 3}
-    name: crab_03
+  - Body:
+      Sprite: {fileID: 21300000, guid: 5ee6add6a36786e47aa3733ce3212c2a, type: 3}
+    Shell:
+      Sprite: {fileID: 21300000, guid: 2ed4f29d17fdfa542ad7e5d0245bd9a9, type: 3}
+    Name: crab_04
+  - Body:
+      Sprite: {fileID: 21300000, guid: b9a2c083f5660c341ab1193c749b08ef, type: 3}
+    Shell:
+      Sprite: {fileID: 21300000, guid: 20446c3951b86d241b36aee6a6765912, type: 3}
+    Name: crab_02
+  - Body:
+      Sprite: {fileID: 21300000, guid: 9fb98f47154319d49a381fe43d7e5e2e, type: 3}
+    Shell:
+      Sprite: {fileID: 21300000, guid: 2ed4f29d17fdfa542ad7e5d0245bd9a9, type: 3}
+    Name: crab_03
   houses:
   - houseSprite: {fileID: 0}
-    name: empty
+    Name: empty
     inUse: 0
-    shellCost: 0
+    ShellCost: 0
     pearlCost: 0
     crabAmount: 0
     max_level: 0
     level: 0
   - houseSprite: {fileID: -860272524, guid: 696f4ca9e137e6c43bcea590da28064c, type: 3}
-    name: glass_03
+    Name: glass_03
     inUse: 1
-    shellCost: 5
+    ShellCost: 5
     pearlCost: 5
     crabAmount: 4
     max_level: 4
     level: 3
   - houseSprite: {fileID: -2120932946, guid: 2321e77bdf0836240ae71f0913b99736, type: 3}
-    name: coco_01
+    Name: coco_01
     inUse: 1
-    shellCost: 1
+    ShellCost: 1
     pearlCost: 9
     crabAmount: 2
     max_level: 2
@@ -60,26 +60,26 @@ MonoBehaviour:
   - Name: plot_01
     house:
       houseSprite: {fileID: 0}
-      name: 
+      Name: 
       inUse: 0
-      shellCost: 0
+      ShellCost: 0
       pearlCost: 0
       crabAmount: 0
       max_level: 0
       level: 0
     active: 1
-    shellCost: 0
+    ShellCost: 0
     pearlCost: 0
   - Name: plot_02
     house:
       houseSprite: {fileID: 0}
-      name: 
+      Name: 
       inUse: 0
-      shellCost: 0
+      ShellCost: 0
       pearlCost: 0
       crabAmount: 0
       max_level: 0
       level: 0
     active: 1
-    shellCost: 0
+    ShellCost: 0
     pearlCost: 0

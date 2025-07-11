@@ -15,8 +15,7 @@ public class ItemDatabase : ScriptableObject
     {
         if (index < 0 || index >= ItemCount)
         {
-            Debug.LogWarning($"Item index {index} is out of range.");
-            return null;
+            throw new System.Exception($"Item index {index} is out of range.");
         }
 
         return items[index];
@@ -36,11 +35,9 @@ public class ItemDatabase : ScriptableObject
 
     public Item GetActiveItem(int index) 
     {
-        if (index < 0 || index >= ActiveItemCount) 
+        if (index < 0 || index >= ActiveItemCount)
         {
-            Debug.LogWarning($"Active item index {index} is out of range.");
-
-            return null;
+            throw new System.Exception($"Active item index {index} is out of range.");
         }
 
         return activeItems[index];
@@ -63,5 +60,7 @@ public class ItemDatabase : ScriptableObject
             item.Active = true;
             activeItems.Add(item);
         }
+
+        Debug.Log($"ItemDatabase reset: {activeItems.Count} active items.");
     }
 }

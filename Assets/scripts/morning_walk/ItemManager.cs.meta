@@ -3,7 +3,14 @@ guid: 29ea0c76bde05714ea1a70c5f71de01d
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - itemDB: {instanceID: 0}
+  - chosenItems: {instanceID: 0}
+  - inv: {instanceID: 0}
+  - morning_walk: {instanceID: 0}
+  - new_crab: {instanceID: 0}
+  - crabManager: {instanceID: 0}
+  - cam: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
