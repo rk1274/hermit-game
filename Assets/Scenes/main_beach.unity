@@ -273,7 +273,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 11400000, guid: 926ecfe8040aa9e46884e87c13b918ee, type: 2}
-  PDB: {fileID: 11400000, guid: e8825adeae63b04439e7495a584665cb, type: 2}
+  plotDatabase: {fileID: 11400000, guid: e8825adeae63b04439e7495a584665cb, type: 2}
   plotButtons:
   - {fileID: 2110498989}
   - {fileID: 801947564}
@@ -292,7 +292,7 @@ MonoBehaviour:
   - {fileID: 1777916532}
   - {fileID: 1080282295}
   - {fileID: 1642142110}
-  cost_text: {fileID: 1933174960}
+  costText: {fileID: 1933174960}
   infoBar: {fileID: 91526869}
 --- !u!4 &99305322
 Transform:
@@ -2613,7 +2613,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 10.8
+  orthographic size: 9.92
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

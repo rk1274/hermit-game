@@ -5,26 +5,24 @@ using UnityEngine;
 
 public class PlotManager : MonoBehaviour
 {
-    public PlayerInventory inventory;
+    [SerializeField] private PlayerInventory inventory;
+    [SerializeField] private PlotDatabase plotDatabase;
 
-    public PlotDatabase PDB;
+    [SerializeField] private GameObject[] plotButtons;
+    [SerializeField] private GameObject[] plotSprites;
 
-    public GameObject[] plotButtons;
-    public GameObject[] plotSprites;
+    [SerializeField] private TMP_Text costText;
+    [SerializeField] private GameObject infoBar;
 
-    public TMP_Text cost_text;
-
-    public GameObject infoBar;
-
-    private Plot newPlot;
+    private Plot nextPlot;
 
     void Start()
     {
-        DisplayPlots();
-        SetShopPanel();
+        UpdatePlotDisplay();
+        UpdateShopPanel();
     }
 
-    public void DisplayPlots()
+    public void UpdatePlotDisplay()
     {
         for (int i = 0; i < inventory.PlotCount; i++)
         {
@@ -33,33 +31,42 @@ public class PlotManager : MonoBehaviour
         }
     }
 
-
-    public void SetShopPanel()
+    public void UpdateShopPanel()
     {
         int index = inventory.PlotCount;
 
-        if(index < PDB.PlotCount)
+        if(index < plotDatabase.PlotCount)
         {
-            newPlot = PDB.GetPlot(index);
-
-            cost_text.SetText(newPlot.ShellCost.ToString() + "          " + newPlot.PearlCost.ToString());
+            nextPlot = plotDatabase.GetPlot(index);
+            costText.text = $"{nextPlot.ShellCost}          {nextPlot.PearlCost}";
         }
         else
         {
+            nextPlot = null;
             infoBar.SetActive(false);
         }
     }
 
     public void Buy()
     {
-        if(inventory.Shells >= newPlot.ShellCost && inventory.Pearls >= newPlot.PearlCost)
+        if (nextPlot == null)
         {
-            inventory.AddPlot(newPlot);
-            inventory.AddShells(-newPlot.ShellCost);
-            inventory.AddPearls(-newPlot.PearlCost);
+            Debug.LogWarning("No plot available to buy.");
+            return;
+        }
 
-            DisplayPlots();
-            SetShopPanel();
+        if (inventory.Shells >= nextPlot.ShellCost && inventory.Pearls >= nextPlot.PearlCost)
+        {
+            inventory.AddPlot(nextPlot);
+            inventory.AddShells(-nextPlot.ShellCost);
+            inventory.AddPearls(-nextPlot.PearlCost);
+
+            UpdatePlotDisplay();
+            UpdateShopPanel();
+        }
+        else
+        {
+            Debug.Log("Not enough resources to buy plot.");
         }
     }
 

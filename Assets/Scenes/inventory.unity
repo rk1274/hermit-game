@@ -848,6 +848,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerInventory: {fileID: 11400000, guid: 926ecfe8040aa9e46884e87c13b918ee, type: 2}
   houseDB: {fileID: 11400000, guid: d48685d2d559b4345b5d4ed4f3b82ff5, type: 2}
+  itemDB: {fileID: 0}
 --- !u!114 &338578918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4876,23 +4877,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3faa7c2eef3004c45b619da8650c5e5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  house_sprite: {fileID: 1614177007}
-  level_text: {fileID: 445523890}
-  name_text: {fileID: 490846711}
-  cost_text: {fileID: 581827800}
-  quantity_text: {fileID: 1228258037}
-  curHouse:
-    houseSprite: {fileID: 0}
-    name: 
-    inUse: 0
-    shellCost: 0
-    pearlCost: 0
-    crabAmount: 0
-    max_level: 0
-    level: 0
-  inv: {fileID: 11400000, guid: 926ecfe8040aa9e46884e87c13b918ee, type: 2}
-  HDB: {fileID: 11400000, guid: d48685d2d559b4345b5d4ed4f3b82ff5, type: 2}
-  upgradeBut: {fileID: 1746160624}
-  upgrade: {fileID: 1746160626}
-  inventory: {fileID: 338578922}
-  upgrade_info: {fileID: 809980849}
+  houseSprite: {fileID: 1614177007}
+  levelText: {fileID: 445523890}
+  nameText: {fileID: 490846711}
+  costText: {fileID: 581827800}
+  quantityText: {fileID: 1228258037}
+  upgradeButtonContainer: {fileID: 1746160624}
+  upgradeButton: {fileID: 1746160626}
+  upgradeInfo: {fileID: 1409460259}
+  inventory: {fileID: 11400000, guid: 926ecfe8040aa9e46884e87c13b918ee, type: 2}
+  houseDatabase: {fileID: 11400000, guid: d48685d2d559b4345b5d4ed4f3b82ff5, type: 2}
+  inventoryManager: {fileID: 338578922}

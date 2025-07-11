@@ -5,19 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class NewCrabManager : MonoBehaviour
 {
-    public ChosenItems chosenItems;
-    public CrabDatabase crabDB;
-
-    public GameObject body;
-    public GameObject shell;
-
-    public ItemManager itemManager;
+    [SerializeField] private ChosenItems chosenItems;
+    [SerializeField] private CrabDatabase crabDB;
+    [SerializeField] private GameObject body;
+    [SerializeField] private GameObject shell;
+    [SerializeField] private ItemManager itemManager;
 
     public void SetCrab()
     {
         Item crabItem = chosenItems.Crab;
-
-        Debug.Log("CRAB FOUND!");
         Crab crab = crabDB.GetCrab(crabItem.Name);
 
         body.GetComponent<SpriteRenderer>().sprite = crab.Body.Sprite;
