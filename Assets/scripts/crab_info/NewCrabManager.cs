@@ -26,13 +26,13 @@ public class NewCrabManager : MonoBehaviour
 
     public void Discard()
     {
-        itemManager.crabStatus = 1;
+        itemManager.crabStatus = ItemManager.CrabStatus.Discarded;
         chosenItems.ClearCrab();
     }
 
     public void Keep()
     {
-        itemManager.crabStatus = 2;
+        itemManager.crabStatus =  ItemManager.CrabStatus.Kept;
         chosenItems.ClearCrab();
     }
 }
