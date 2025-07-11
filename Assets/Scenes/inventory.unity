@@ -209,7 +209,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 338578922}
         m_TargetAssemblyTypeName: Inventory_Manager, Assembly-CSharp
-        m_MethodName: update_info_bar
+        m_MethodName: UpdateInfoBar
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -764,7 +764,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 338578922}
         m_TargetAssemblyTypeName: Inventory_Manager, Assembly-CSharp
-        m_MethodName: update_info_bar
+        m_MethodName: UpdateInfoBar
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -848,7 +848,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerInventory: {fileID: 11400000, guid: 926ecfe8040aa9e46884e87c13b918ee, type: 2}
   houseDB: {fileID: 11400000, guid: d48685d2d559b4345b5d4ed4f3b82ff5, type: 2}
-  itemDB: {fileID: 0}
+  itemDB: {fileID: 11400000, guid: 47f2f24f883bb774c87962e267f11779, type: 2}
 --- !u!114 &338578918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -945,10 +945,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0078623450c9e0042b6438ef7cc971ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inv: {fileID: 11400000, guid: 926ecfe8040aa9e46884e87c13b918ee, type: 2}
-  info_bar: {fileID: 2116416715}
-  info_bm: {fileID: 2116416720}
-  house_db: {fileID: 11400000, guid: d48685d2d559b4345b5d4ed4f3b82ff5, type: 2}
+  inventory: {fileID: 11400000, guid: 926ecfe8040aa9e46884e87c13b918ee, type: 2}
+  infoBar: {fileID: 2116416715}
+  infoBarManager: {fileID: 2116416720}
+  houseDatabase: {fileID: 11400000, guid: d48685d2d559b4345b5d4ed4f3b82ff5, type: 2}
   images:
   - {fileID: 1083416333}
   - {fileID: 418983157}
@@ -1386,7 +1386,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 338578922}
         m_TargetAssemblyTypeName: Inventory_Manager, Assembly-CSharp
-        m_MethodName: update_info_bar
+        m_MethodName: UpdateInfoBar
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1672,7 +1672,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 338578922}
         m_TargetAssemblyTypeName: Inventory_Manager, Assembly-CSharp
-        m_MethodName: update_info_bar
+        m_MethodName: UpdateInfoBar
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2634,7 +2634,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 338578922}
         m_TargetAssemblyTypeName: Inventory_Manager, Assembly-CSharp
-        m_MethodName: update_info_bar
+        m_MethodName: UpdateInfoBar
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2768,7 +2768,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 338578922}
         m_TargetAssemblyTypeName: Inventory_Manager, Assembly-CSharp
-        m_MethodName: update_info_bar
+        m_MethodName: UpdateInfoBar
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3018,7 +3018,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 338578922}
         m_TargetAssemblyTypeName: Inventory_Manager, Assembly-CSharp
-        m_MethodName: update_info_bar
+        m_MethodName: UpdateInfoBar
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4023,7 +4023,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2116416720}
         m_TargetAssemblyTypeName: InfoBar_Manager, Assembly-CSharp
-        m_MethodName: Upgrade_house
+        m_MethodName: UpgradeHouse
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4292,7 +4292,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 338578922}
         m_TargetAssemblyTypeName: Inventory_Manager, Assembly-CSharp
-        m_MethodName: update_info_bar
+        m_MethodName: UpdateInfoBar
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4426,7 +4426,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 338578922}
         m_TargetAssemblyTypeName: Inventory_Manager, Assembly-CSharp
-        m_MethodName: update_info_bar
+        m_MethodName: UpdateInfoBar
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -4569,10 +4569,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventory: {fileID: 11400000, guid: 926ecfe8040aa9e46884e87c13b918ee, type: 2}
   chosenItems: {fileID: 11400000, guid: e1323925d0e949340a5f2e02f4db58d2, type: 2}
-  crabDB: {fileID: 11400000, guid: e42997fdfcfe99940b96126c5f2c4dd1, type: 2}
-  shells: {fileID: 1824494241}
-  pearls: {fileID: 261577743}
-  crabs: {fileID: 1351766440}
+  crabDatabase: {fileID: 11400000, guid: e42997fdfcfe99940b96126c5f2c4dd1, type: 2}
+  shellsText: {fileID: 1824494241}
+  pearlsText: {fileID: 261577743}
+  crabsText: {fileID: 1351766440}
 --- !u!4 &732646346
 Transform:
   m_ObjectHideFlags: 0

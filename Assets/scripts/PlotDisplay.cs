@@ -3,38 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class plot_01 : MonoBehaviour
+public class PlotDisplay : MonoBehaviour
 {
-    public HouseDatabase houseDB;
-
-    public SpriteRenderer artworkSprite;
-
-    public PlayerInventory playerInventory;
+    [SerializeField] private SpriteRenderer artworkSprite;
+    [SerializeField] private PlayerInventory playerInventory;
 
     private int selectedOption = 0;
 
-    private bool empty;
-
     private void Start()
     {
-        if (playerInventory.HouseCount == 1)
+        if (!PlayerPrefs.HasKey(gameObject.name))
         {
-            empty = true;
-
+            selectedOption = 0;
         }
         else
         {
-            if (!PlayerPrefs.HasKey(gameObject.name))
-            {
-                selectedOption = 0;
-            }
-            else
-            {
-                Load();
-            }
-            UpdateHouse(selectedOption);
+            Load();
         }
 
+        UpdateHouse(selectedOption);
     }
 
     private void UpdateHouse(int selectedOption)

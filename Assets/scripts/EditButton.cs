@@ -4,39 +4,37 @@ using UnityEngine;
 
 public class EditButton : MonoBehaviour
 {
+    [SerializeField] private GameObject mainCanvas;
+    [SerializeField] private GameObject editCanvas;
 
-    public GameObject mainCanvas;
-    public GameObject editCanvas;
-
-    public void Start()
+    private void Start()
     {
         if (PlayerPrefs.GetInt("edit_isActive") == 0)
         {
             mainCanvas.SetActive(true);
             editCanvas.SetActive(false);
+
+            return;
         }
-        else
-        {
-            mainCanvas.SetActive(false);
-            editCanvas.SetActive(true);
-        }
+
+        mainCanvas.SetActive(false);
+        editCanvas.SetActive(true);
     }
+
     public void setActive()
     {
         if (PlayerPrefs.GetInt("edit_isActive") == 1)
         {
             mainCanvas.SetActive(true);
             editCanvas.SetActive(false);
-            Debug.Log("Active: false");
-            PlayerPrefs.SetInt("edit_isActive", 0);
-        }
-        else
-        {
-            mainCanvas.SetActive(false);
-            editCanvas.SetActive(true);
-            Debug.Log("Active: true");
-            PlayerPrefs.SetInt("edit_isActive", 1);
-        }
-    }
 
+            PlayerPrefs.SetInt("edit_isActive", 0);
+
+            return;
+        }
+
+        mainCanvas.SetActive(false);
+        editCanvas.SetActive(true);
+        PlayerPrefs.SetInt("edit_isActive", 1);
+    }
 }

@@ -5,49 +5,59 @@ using TMPro;
 
 public class AfterWalkLoader : MonoBehaviour
 {
-    public PlayerInventory inventory;
+    [Header("References")]
+    [SerializeField] private PlayerInventory inventory;
+    [SerializeField] private ChosenItems chosenItems;
+    [SerializeField] private CrabDatabase crabDatabase;
 
-    public ChosenItems chosenItems;
-    public CrabDatabase crabDB;
-
-    public TMP_Text shells;
-    public TMP_Text pearls;
-    public TMP_Text crabs;
+    [Header("UI Elements")]
+    [SerializeField] private TMP_Text shellsText;
+    [SerializeField] private TMP_Text pearlsText;
+    [SerializeField] private TMP_Text crabsText;
 
     private void Start()
     {
-        Item[] items = chosenItems.Items;
-
-        for (int i = 0; i < items.Length; i++)
-        {
-            if(items[i] != null && !string.IsNullOrEmpty(items[i].Name))
-            {
-                string[] name = items[i].Name.Split('_');
-                if (name[0] == "shell")
-                {
-                    Debug.Log("SHELL FOUND!");
-                    inventory.AddShells(1);
-                }
-                else if (name[0] == "pearl")
-                {
-                    Debug.Log("PEARL FOUND!");
-                    inventory.AddPearls(1);
-                }
-                else if (name[0] == "crab")
-                {
-                    Debug.Log("CRAB FOUND!");
-                    Crab crab = crabDB.GetCrab(items[i].Name);
-                    inventory.AddCrab(crab);
-                }
-            }
-
-        }
-
-        shells.text = inventory.Shells.ToString();
-        pearls.text = inventory.Pearls.ToString();
-        crabs.SetText(inventory.CrabCount.ToString()+" / "+inventory.Capacity);
-
+        ProcessChosenItems();
+        UpdateUI();
         chosenItems.ClearAllItems();
+    }
 
+    private void ProcessChosenItems()
+    {
+        foreach (Item item in chosenItems.Items)
+        {
+            if (item == null || string.IsNullOrEmpty(item.Name))
+                continue;
+
+            string[] nameParts = item.Name.Split('_');
+            string category = nameParts[0];
+
+            switch (category)
+            {
+                case "shell":
+                    inventory.AddShells(1);
+                    break;
+
+                case "pearl":
+                    inventory.AddPearls(1);
+                    break;
+
+                case "crab":
+                    Crab crab = crabDatabase.GetCrab(item.Name);
+                    inventory.AddCrab(crab);
+                    break;
+
+                default:
+                    Debug.LogWarning($"Unknown item type: {item.Name}");
+                    break;
+            }
+        }
+    }
+
+    private void UpdateUI()
+    {
+        shellsText.text = inventory.Shells.ToString();
+        pearlsText.text = inventory.Pearls.ToString();
+        crabsText.SetText($"{inventory.CrabCount} / {inventory.Capacity}");
     }
 }

@@ -6,40 +6,33 @@ using UnityEngine.SceneManagement;
 
 public class HouseManager : MonoBehaviour
 {
-    public HouseDatabase houseDB;
-    public PlotSO plot;
-
-    public SpriteRenderer artworkSprite;
-
-    public PlayerInventory playerInventory;
-    public ItemDatabase itemDB;
+    [Header("References")]
+    [SerializeField] private PlotSO plot;
+    [SerializeField] private SpriteRenderer artworkSprite;
+    [SerializeField] private PlayerInventory playerInventory;
+    [SerializeField] private ItemDatabase itemDB;
 
     private int selectedOption = 0;
-
     private bool empty;
 
     private void Start()
     {
-        if(playerInventory.HouseCount == 1)
-        {
-            empty = true; 
-
-        }else if (CheckInUse())
+        if (playerInventory.HouseCount == 1 || isEveryHouseInUse())
         {
             empty = true;
-        }
-        else
-        {
-            if (!PlayerPrefs.HasKey(plot.CurrentPlot))
-            {
-                selectedOption = 0;
-            }
 
-            UpdateHouse(selectedOption);
+            return;
         }
+
+        if (!PlayerPrefs.HasKey(plot.CurrentPlot))
+        {
+            selectedOption = 0;
+        }
+
+        UpdateHouse(selectedOption);
     }
 
-    public bool CheckInUse()
+    private bool isEveryHouseInUse()
     {
         Load();
 
@@ -50,6 +43,7 @@ public class HouseManager : MonoBehaviour
                 return false;
             }
         }
+
         return true;
     }
 
@@ -59,6 +53,7 @@ public class HouseManager : MonoBehaviour
         {
             return;
         }
+
         selectedOption++;
 
         if(selectedOption >= playerInventory.HouseCount)
@@ -69,10 +64,10 @@ public class HouseManager : MonoBehaviour
         if (playerInventory.GetHouse(selectedOption).InUse)
         {
             NextOption();
-            Debug.Log(":p");
+
+            return;
         }
 
-        Debug.Log(selectedOption.ToString());
         UpdateHouse(selectedOption);
         Save();
     }
@@ -83,6 +78,7 @@ public class HouseManager : MonoBehaviour
         {
             return;
         }
+
         selectedOption--;
 
         if (selectedOption < 0)
@@ -93,10 +89,10 @@ public class HouseManager : MonoBehaviour
         if (playerInventory.GetHouse(selectedOption).InUse)
         {
             BackOption();
-            Debug.Log(":p");
+
+            return;
         }
 
-        Debug.Log(selectedOption.ToString());
         UpdateHouse(selectedOption);
         Save();
     }
@@ -105,7 +101,6 @@ public class HouseManager : MonoBehaviour
     {
         House house = playerInventory.GetHouse(selectedOption);
         artworkSprite.sprite = house.Sprite;
-
     }
 
     private void Load()
@@ -129,12 +124,13 @@ public class HouseManager : MonoBehaviour
         {
             if (playerInventory.GetHouse(selectedOption).Name.Equals("flame_tree_01") || playerInventory.GetHouse(selectedOption).Name.Equals("flame_tree_02"))
             {
-                Debug.Log("here");
                 itemDB.SetActive("crab_s_fire");
             }
+
             playerInventory.AddCapacity(selectedOption);
             playerInventory.GetHouse(selectedOption).InUse = true;
         }
+
         SceneManager.LoadScene(sceneID);
     }
 }

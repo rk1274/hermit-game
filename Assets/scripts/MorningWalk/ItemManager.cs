@@ -28,7 +28,7 @@ public class ItemManager : MonoBehaviour
 
     [Header("Managers")]
     public NewCrabManager crabManager;
-    public move_camera cameraController;
+    public MoveCamera cameraController;
 
     private Dictionary<Button, Item> buttonItemMap;
     private int itemCount = 0;
@@ -96,7 +96,7 @@ public class ItemManager : MonoBehaviour
         handleNewCrabUI(button, buttonObj);
 
         UnityEngine.Vector3 originalCameraPos = Camera.main.transform.position;
-        int originalSpeed = cameraController.speed;
+        int originalSpeed = cameraController.Speed;
 
         pauseScroll();
 
@@ -117,13 +117,13 @@ public class ItemManager : MonoBehaviour
 
     private void pauseScroll()
     {
-        cameraController.speed = 0;
+        cameraController.Speed = 0;
         cameraController.transform.position = new UnityEngine.Vector3(0, 0, -10);
     }
 
      private void resumeScroll(UnityEngine.Vector3 originalCameraPos, int originalSpeed)
     {
-        cameraController.speed = originalSpeed;
+        cameraController.Speed = originalSpeed;
         cameraController.transform.position = originalCameraPos;
         morningWalk.SetActive(true);
         newCrabUI.SetActive(false);

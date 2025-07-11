@@ -4,15 +4,9 @@ using UnityEngine;
 
 public class ShopButtonController : MonoBehaviour
 {
-    public PlayerInventory playerInventory;
-    public HouseDatabase houseDB;
-
-    public ItemDatabase itemDB;
-
-    private int neededShell;
-    private int neededPearl;
-    private int capacity;
-    
+    [SerializeField] private PlayerInventory playerInventory;
+    [SerializeField] private HouseDatabase houseDB;
+    [SerializeField] private ItemDatabase itemDB;
 
     public void SelectCoco()
     {
