@@ -20,7 +20,7 @@ public class ItemManager : MonoBehaviour
 
     [Header("UI")]
     public GameObject itemLocationContainer;
-    private Button[] itemLocations;
+    private List<Button> itemLocations;
 
     [Header("Game State")]
     public PlayerInventory inventory;
@@ -31,6 +31,22 @@ public class ItemManager : MonoBehaviour
     public NewCrabManager crabManager;
     public MoveCamera cameraController;
 
+    [Header("Generation Settings")]
+    public GameObject buttonPrefab;
+    public RectTransform buttonParent;
+    public int buttonCount = 5;
+
+    private float xMin = -340f;
+    private float xMax = -76f;
+
+    private float yMin = -7293f;
+    private float yMax = 13156;
+    private float yMinDiff = 200f;
+    private float yMaxDiff = 1000f;
+
+    private float minZRotation = -30f;
+    private float maxZRotation = 30f;
+
     private Dictionary<Button, Item> locationItemMap;
     private int itemCount = 0;
     private int internalCrabCount;
@@ -40,7 +56,7 @@ public class ItemManager : MonoBehaviour
     {
         if (itemLocationContainer != null)
         {
-            itemLocations = itemLocationContainer.GetComponentsInChildren<Button>(true);
+            generateItemLocations();
         }
         else
         {
@@ -53,7 +69,7 @@ public class ItemManager : MonoBehaviour
             itemDB.Reset();
         }
 
-        locationItemMap = new Dictionary<Button, Item>(itemLocations.Length);
+        locationItemMap = new Dictionary<Button, Item>(itemLocations.Count);
         internalCrabCount = inventory.CrabCount;
         chosenItems.ClearAllItems();
 
@@ -64,6 +80,63 @@ public class ItemManager : MonoBehaviour
 
             locationItemMap[itemLocation] = item;
         }
+    }
+
+    private void generateItemLocations()
+    {
+        if (buttonPrefab == null || buttonParent == null)
+        {
+            Debug.LogError("Missing buttonPrefab or buttonParent reference.");
+            return;
+        }
+    
+        locationItemMap = new Dictionary<Button, Item>(buttonCount);
+        itemLocations = new List<Button>();
+        
+        float currentY = yMin;
+        int locationNum = 1;
+
+        while (currentY < yMax)
+        {
+            GameObject itemLocationObj = createNewLocation(locationNum);
+
+            setLocationPosition(itemLocationObj, currentY);
+
+            getAndSetItem(itemLocationObj);
+
+            locationNum++;
+            currentY += Random.Range(yMinDiff, yMaxDiff);
+        }
+    }
+
+    private GameObject createNewLocation(int num)
+    {
+        GameObject newLocation = Instantiate(buttonPrefab, buttonParent);
+        newLocation.name = $"location_{num}";
+
+        return newLocation;
+    }
+
+    private void setLocationPosition(GameObject itemLocationObj, float currentY)
+    {
+        RectTransform rt = itemLocationObj.GetComponent<RectTransform>();
+
+        float x = Random.Range(xMin, xMax);
+        float zRotation = Random.Range(minZRotation, maxZRotation);
+
+        rt.anchoredPosition = new Vector2(x, currentY);
+        rt.localEulerAngles = new Vector3(0f, 0f, zRotation);
+    }
+
+    private void getAndSetItem(GameObject itemLocationObj)
+    {
+        Button btn = itemLocationObj.GetComponent<Button>();
+        Item item = GetRandomActiveItem();
+
+        btn.GetComponent<Image>().sprite = item.Sprite;
+
+        itemLocations.Add(btn);
+        locationItemMap[btn] = item;
     }
 
     private Item GetRandomActiveItem()
