@@ -19,7 +19,8 @@ public class ItemManager : MonoBehaviour
     public ChosenItems chosenItems;
 
     [Header("UI")]
-    public Button[] buttons;
+    public GameObject itemLocationContainer;
+    private Button[] itemLocations;
 
     [Header("Game State")]
     public PlayerInventory inventory;
@@ -30,28 +31,38 @@ public class ItemManager : MonoBehaviour
     public NewCrabManager crabManager;
     public MoveCamera cameraController;
 
-    private Dictionary<Button, Item> buttonItemMap;
+    private Dictionary<Button, Item> locationItemMap;
     private int itemCount = 0;
     private int internalCrabCount;
     public CrabStatus crabStatus = CrabStatus.Inactive;
 
     private void Start()
     {
+        if (itemLocationContainer != null)
+        {
+            itemLocations = itemLocationContainer.GetComponentsInChildren<Button>(true);
+        }
+        else
+        {
+            Debug.LogWarning("Button container is not assigned.");
+        }
+
         if (itemDB.ActiveItemCount == 0)
         {
             Debug.LogWarning("Active items empty at start, calling Reset() to populate.");
             itemDB.Reset();
         }
 
-        buttonItemMap = new Dictionary<Button, Item>(buttons.Length);
+        locationItemMap = new Dictionary<Button, Item>(itemLocations.Length);
         internalCrabCount = inventory.CrabCount;
         chosenItems.ClearAllItems();
 
-        foreach (Button button in buttons)
+        foreach (Button itemLocation in itemLocations)
         {
             var item = GetRandomActiveItem();
-            button.GetComponent<Image>().sprite = item.Sprite;
-            buttonItemMap[button] = item;
+            itemLocation.GetComponent<Image>().sprite = item.Sprite;
+
+            locationItemMap[itemLocation] = item;
         }
     }
 
@@ -61,17 +72,17 @@ public class ItemManager : MonoBehaviour
         return itemDB.GetActiveItem(index);
     }
 
-    public void SetChosen(GameObject buttonObj)
+    public void SetChosen(GameObject itemLocationObj)
     {
-        Button button = buttonObj.GetComponent<Button>();
-        StartCoroutine(HandleItemSelection(button, buttonObj));
+        Button itemLocation = itemLocationObj.GetComponent<Button>();
+        StartCoroutine(HandleItemSelection(itemLocation, itemLocationObj));
     }
 
-    private IEnumerator HandleItemSelection(Button button, GameObject buttonObj)
+    private IEnumerator HandleItemSelection(Button itemLocation, GameObject itemLocationObj)
     {
         if (itemCount >= 5) yield break;
 
-        Item item = buttonItemMap[button];
+        Item item = locationItemMap[itemLocation];
         string[] nameParts = item.Name.Split('_');
 
         if (nameParts[0] == "crab")
@@ -82,18 +93,18 @@ public class ItemManager : MonoBehaviour
                 yield break;
             }
 
-            yield return StartCoroutine(HandleCrabSelection(button, buttonObj));
+            yield return StartCoroutine(HandleCrabSelection(item, itemLocationObj));
         }
         else
         {
-            buttonObj.SetActive(false);
-            AddNewSelection(button);
+            itemLocationObj.SetActive(false);
+            AddNewSelection(item);
         }
     }
 
-    private IEnumerator HandleCrabSelection(Button button, GameObject buttonObj)
+    private IEnumerator HandleCrabSelection(Item item, GameObject itemLocationObj)
     {
-        handleNewCrabUI(button, buttonObj);
+        handleNewCrabUI(item, itemLocationObj);
 
         UnityEngine.Vector3 originalCameraPos = Camera.main.transform.position;
         int originalSpeed = cameraController.Speed;
@@ -109,7 +120,7 @@ public class ItemManager : MonoBehaviour
         if (crabStatus == CrabStatus.Kept)
         {
             internalCrabCount++;
-            AddNewSelection(button);
+            AddNewSelection(item);
         }
 
         crabStatus = CrabStatus.Inactive;
@@ -129,18 +140,17 @@ public class ItemManager : MonoBehaviour
         newCrabUI.SetActive(false);
     }
 
-    private void handleNewCrabUI(Button button, GameObject buttonObj)
+    private void handleNewCrabUI(Item item, GameObject itemLocationObj)
     {
-        buttonObj.SetActive(false);
-        chosenItems.SetCrab(buttonItemMap[button]);
+        itemLocationObj.SetActive(false);
+        chosenItems.SetCrab(item);
 
         morningWalk.SetActive(false);
         newCrabUI.SetActive(true);
     }
 
-    private void AddNewSelection(Button button)
+    private void AddNewSelection(Item item)
     {
-        Item item = buttonItemMap[button];
         chosenItems.SetItem(item, itemCount);
         itemCount++;
     }

@@ -125,3 +125,11 @@ MonoBehaviour:
     CrabAmount: 7
     MaxLevel: 2
     Level: 2
+  - Sprite: {fileID: 21300000, guid: 7349c9cac90e8534cab6edf85a94bfbd, type: 3}
+    Name: geode
+    InUse: 0
+    ShellCost: 0
+    PearlCost: 0
+    CrabAmount: 2
+    MaxLevel: 1
+    Level: 1

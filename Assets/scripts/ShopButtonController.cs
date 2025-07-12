@@ -43,6 +43,13 @@ public class ShopButtonController : MonoBehaviour
         UpdateInventory(-curHouse.ShellCost, -curHouse.PearlCost, curHouse);
     }
 
+    public void SelectGeode()
+    {
+        House curHouse = houseDB.GetHouseByName("geode");
+
+        UpdateInventory(-curHouse.ShellCost, -curHouse.PearlCost, curHouse);
+    }
+
     public void UpdateInventory(int neededShell, int neededPearl, House house)
     {
         if (playerInventory.Shells >= -neededShell && playerInventory.Pearls >= -neededPearl)
