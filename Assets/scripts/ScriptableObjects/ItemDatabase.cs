@@ -49,8 +49,7 @@ public class ItemDatabase : ScriptableObject
 
         foreach (Item item in items)
         {
-            string[] nameParts = item.Name.Split('_');
-            if (nameParts.Length > 1 && nameParts[1] != "n")
+            if (item.Category == Item.ItemCategory.Special)
             {
                 item.Active = false;
 

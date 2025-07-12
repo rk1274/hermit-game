@@ -29,20 +29,17 @@ public class AfterWalkLoader : MonoBehaviour
             if (item == null || string.IsNullOrEmpty(item.Name))
                 continue;
 
-            string[] nameParts = item.Name.Split('_');
-            string category = nameParts[0];
-
-            switch (category)
+            switch (item.Type)
             {
-                case "shell":
+                case Item.ItemType.Shell:
                     inventory.AddShells(1);
                     break;
 
-                case "pearl":
+                case Item.ItemType.Pearl:
                     inventory.AddPearls(1);
                     break;
 
-                case "crab":
+                case Item.ItemType.Crab:
                     Crab crab = crabDatabase.GetCrab(item.Name);
                     inventory.AddCrab(crab);
                     break;

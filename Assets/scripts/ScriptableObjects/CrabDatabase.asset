@@ -22,49 +22,49 @@ MonoBehaviour:
       Sprite: {fileID: 21300000, guid: b9a2c083f5660c341ab1193c749b08ef, type: 3}
     Shell:
       Sprite: {fileID: 21300000, guid: 20446c3951b86d241b36aee6a6765912, type: 3}
-    Name: crab_n_blue_dot
+    Name: blue_dot
   - Body:
       Sprite: {fileID: 21300000, guid: 9fb98f47154319d49a381fe43d7e5e2e, type: 3}
     Shell:
       Sprite: {fileID: 21300000, guid: 2ed4f29d17fdfa542ad7e5d0245bd9a9, type: 3}
-    Name: crab_n_green_red
+    Name: green_red
   - Body:
       Sprite: {fileID: 21300000, guid: 5ee6add6a36786e47aa3733ce3212c2a, type: 3}
     Shell:
       Sprite: {fileID: 21300000, guid: 2ed4f29d17fdfa542ad7e5d0245bd9a9, type: 3}
-    Name: crab_n_purple_red
+    Name: purple_red
   - Body:
       Sprite: {fileID: 21300000, guid: 68269784a30f6964c8aca952a54a716e, type: 3}
     Shell:
       Sprite: {fileID: 21300000, guid: 6ef1e67ef78ac674d97f69eceaf7d42c, type: 3}
-    Name: crab_n_grey_green
+    Name: grey_green
   - Body:
       Sprite: {fileID: 21300000, guid: 843ffd253f9ccf645b748708cca5b5a7, type: 3}
     Shell:
       Sprite: {fileID: 21300000, guid: 20446c3951b86d241b36aee6a6765912, type: 3}
-    Name: crab_n_red_dot
+    Name: red_dot
   - Body:
       Sprite: {fileID: 21300000, guid: 73849d3d65bb60c4786b7a7c82b35be7, type: 3}
     Shell:
       Sprite: {fileID: 21300000, guid: 6ef1e67ef78ac674d97f69eceaf7d42c, type: 3}
-    Name: crab_n_yellow_green
+    Name: yellow_green
   - Body:
       Sprite: {fileID: 21300000, guid: 21d3cc9b044e5194ca58fe9318de26a5, type: 3}
     Shell:
       Sprite: {fileID: 21300000, guid: 29800fb9b305974479a5c7aec5a49406, type: 3}
-    Name: crab_n_pink_cream
+    Name: pink_cream
   - Body:
       Sprite: {fileID: 21300000, guid: 4ae49d20224f3fa4e93664ea190affcb, type: 3}
     Shell:
       Sprite: {fileID: 21300000, guid: 2ed4f29d17fdfa542ad7e5d0245bd9a9, type: 3}
-    Name: crab_n_blue_red
+    Name: blue_red
   - Body:
       Sprite: {fileID: 21300000, guid: bc169169627eb4f4e8090c92135d04e6, type: 3}
     Shell:
       Sprite: {fileID: 21300000, guid: 29800fb9b305974479a5c7aec5a49406, type: 3}
-    Name: crab_n_green_cream
+    Name: green_cream
   - Body:
       Sprite: {fileID: 21300000, guid: bf28953f92330ee49938f985d5aea454, type: 3}
     Shell:
       Sprite: {fileID: 21300000, guid: f0c84aafb36c79043ae55809c3530b3a, type: 3}
-    Name: crab_s_fire
+    Name: fire

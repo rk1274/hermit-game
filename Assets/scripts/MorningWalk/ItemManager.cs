@@ -153,12 +153,15 @@ public class ItemManager : MonoBehaviour
 
     private IEnumerator HandleItemSelection(Button itemLocation, GameObject itemLocationObj)
     {
-        if (itemCount >= 5) yield break;
+        if (itemCount >= 5)
+        {
+            Debug.Log("Max items reached.");
+
+            yield break;
+        }
 
         Item item = locationItemMap[itemLocation];
-        string[] nameParts = item.Name.Split('_');
-
-        if (nameParts[0] == "crab")
+        if (item.Type == Item.ItemType.Crab)
         {
             if (inventory.Capacity <= internalCrabCount)
             {

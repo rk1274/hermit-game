@@ -124,7 +124,7 @@ public class HouseManager : MonoBehaviour
         {
             if (playerInventory.GetHouse(selectedOption).Name.Equals("flame_tree_01") || playerInventory.GetHouse(selectedOption).Name.Equals("flame_tree_02"))
             {
-                itemDB.SetActive("crab_s_fire");
+                itemDB.SetActive("fire");
             }
 
             playerInventory.AddCapacity(selectedOption);
