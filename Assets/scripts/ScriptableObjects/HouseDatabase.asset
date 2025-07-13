@@ -21,6 +21,8 @@ MonoBehaviour:
     CrabAmount: 0
     MaxLevel: 0
     Level: 0
+    IsSpecial: 0
+    UnlockedItemName: 
   - Sprite: {fileID: -2120932946, guid: 2321e77bdf0836240ae71f0913b99736, type: 3}
     Name: coco_01
     InUse: 0
@@ -29,6 +31,8 @@ MonoBehaviour:
     CrabAmount: 2
     MaxLevel: 2
     Level: 1
+    IsSpecial: 0
+    UnlockedItemName: 
   - Sprite: {fileID: -1698735553, guid: 2321e77bdf0836240ae71f0913b99736, type: 3}
     Name: coco_02
     InUse: 0
@@ -37,6 +41,8 @@ MonoBehaviour:
     CrabAmount: 4
     MaxLevel: 2
     Level: 2
+    IsSpecial: 0
+    UnlockedItemName: 
   - Sprite: {fileID: -1460485833, guid: 696f4ca9e137e6c43bcea590da28064c, type: 3}
     Name: glass_01
     InUse: 0
@@ -45,6 +51,8 @@ MonoBehaviour:
     CrabAmount: 1
     MaxLevel: 4
     Level: 1
+    IsSpecial: 0
+    UnlockedItemName: 
   - Sprite: {fileID: 1802320258, guid: 696f4ca9e137e6c43bcea590da28064c, type: 3}
     Name: glass_02
     InUse: 0
@@ -53,6 +61,8 @@ MonoBehaviour:
     CrabAmount: 2
     MaxLevel: 4
     Level: 2
+    IsSpecial: 0
+    UnlockedItemName: 
   - Sprite: {fileID: -860272524, guid: 696f4ca9e137e6c43bcea590da28064c, type: 3}
     Name: glass_03
     InUse: 0
@@ -61,6 +71,8 @@ MonoBehaviour:
     CrabAmount: 4
     MaxLevel: 4
     Level: 3
+    IsSpecial: 0
+    UnlockedItemName: 
   - Sprite: {fileID: -1436790619, guid: 696f4ca9e137e6c43bcea590da28064c, type: 3}
     Name: glass_04
     InUse: 0
@@ -69,6 +81,8 @@ MonoBehaviour:
     CrabAmount: 5
     MaxLevel: 4
     Level: 4
+    IsSpecial: 0
+    UnlockedItemName: 
   - Sprite: {fileID: -1258351217, guid: faefc09ade812bd4190e3d7ed855bdfb, type: 3}
     Name: log_01
     InUse: 0
@@ -77,6 +91,8 @@ MonoBehaviour:
     CrabAmount: 2
     MaxLevel: 3
     Level: 1
+    IsSpecial: 0
+    UnlockedItemName: 
   - Sprite: {fileID: 1389035180, guid: faefc09ade812bd4190e3d7ed855bdfb, type: 3}
     Name: log_02
     InUse: 0
@@ -85,6 +101,8 @@ MonoBehaviour:
     CrabAmount: 4
     MaxLevel: 3
     Level: 2
+    IsSpecial: 0
+    UnlockedItemName: 
   - Sprite: {fileID: 773582114, guid: faefc09ade812bd4190e3d7ed855bdfb, type: 3}
     Name: log_03
     InUse: 0
@@ -93,6 +111,8 @@ MonoBehaviour:
     CrabAmount: 6
     MaxLevel: 3
     Level: 3
+    IsSpecial: 0
+    UnlockedItemName: 
   - Sprite: {fileID: 968976620, guid: 0c5f49f9e2b53134088dd1d2b19ced7d, type: 3}
     Name: beach_ball_01
     InUse: 0
@@ -101,6 +121,8 @@ MonoBehaviour:
     CrabAmount: 2
     MaxLevel: 1
     Level: 2
+    IsSpecial: 0
+    UnlockedItemName: 
   - Sprite: {fileID: -2003191601, guid: 0c5f49f9e2b53134088dd1d2b19ced7d, type: 3}
     Name: beach_ball_02
     InUse: 0
@@ -109,6 +131,8 @@ MonoBehaviour:
     CrabAmount: 3
     MaxLevel: 2
     Level: 2
+    IsSpecial: 0
+    UnlockedItemName: 
   - Sprite: {fileID: 503994522, guid: dacc5f1fd1773c246bc2c8c017c3d400, type: 3}
     Name: flame_tree_01
     InUse: 0
@@ -117,6 +141,8 @@ MonoBehaviour:
     CrabAmount: 4
     MaxLevel: 2
     Level: 1
+    IsSpecial: 1
+    UnlockedItemName: fire
   - Sprite: {fileID: 1463267180, guid: dacc5f1fd1773c246bc2c8c017c3d400, type: 3}
     Name: flame_tree_02
     InUse: 0
@@ -125,6 +151,8 @@ MonoBehaviour:
     CrabAmount: 7
     MaxLevel: 2
     Level: 2
+    IsSpecial: 1
+    UnlockedItemName: fire
   - Sprite: {fileID: 21300000, guid: 7349c9cac90e8534cab6edf85a94bfbd, type: 3}
     Name: geode
     InUse: 0
@@ -133,3 +161,15 @@ MonoBehaviour:
     CrabAmount: 2
     MaxLevel: 1
     Level: 1
+    IsSpecial: 0
+    UnlockedItemName: 
+  - Sprite: {fileID: 21300000, guid: 96fe596a10654dc45b846cfa967b7c49, type: 3}
+    Name: avocado
+    InUse: 0
+    ShellCost: 0
+    PearlCost: 0
+    CrabAmount: 3
+    MaxLevel: 1
+    Level: 1
+    IsSpecial: 1
+    UnlockedItemName: avocado

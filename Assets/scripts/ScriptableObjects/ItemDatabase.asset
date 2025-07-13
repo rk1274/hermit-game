@@ -105,6 +105,11 @@ MonoBehaviour:
     Type: 2
   - Sprite: {fileID: 21300000, guid: 636a15f7c0a7c6d46bc42a23e64ee2ba, type: 3}
     Name: fire
+    Active: 0
+    Category: 1
+    Type: 2
+  - Sprite: {fileID: 21300000, guid: f41a8056819e257488525118452ee96a, type: 3}
+    Name: avocado
     Active: 1
     Category: 1
     Type: 2
@@ -199,8 +204,8 @@ MonoBehaviour:
     Active: 1
     Category: 0
     Type: 2
-  - Sprite: {fileID: 21300000, guid: 636a15f7c0a7c6d46bc42a23e64ee2ba, type: 3}
-    Name: fire
+  - Sprite: {fileID: 21300000, guid: f41a8056819e257488525118452ee96a, type: 3}
+    Name: avocado
     Active: 1
     Category: 1
     Type: 2

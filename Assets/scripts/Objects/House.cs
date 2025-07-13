@@ -15,6 +15,9 @@ public class House
     public int MaxLevel;
     public int Level;
 
+    public bool IsSpecial;
+    public string UnlockedItemName;
+
     public object ShallowCopy()
     {
         return this.MemberwiseClone();

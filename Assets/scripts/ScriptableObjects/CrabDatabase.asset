@@ -68,3 +68,8 @@ MonoBehaviour:
     Shell:
       Sprite: {fileID: 21300000, guid: f0c84aafb36c79043ae55809c3530b3a, type: 3}
     Name: fire
+  - Body:
+      Sprite: {fileID: 21300000, guid: 3c4705a4bc39e214ab219e860c6dcd28, type: 3}
+    Shell:
+      Sprite: {fileID: 21300000, guid: 96caa8b6898eb7548b6ed3dbbc7a3986, type: 3}
+    Name: avocado

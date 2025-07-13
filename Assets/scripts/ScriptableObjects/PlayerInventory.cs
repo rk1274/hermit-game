@@ -10,6 +10,7 @@ public class PlayerInventory : ScriptableObject
     [SerializeField] private int shells = 1;
     [SerializeField] private int pearls = 1;
     [SerializeField] private int capacity = 0;
+    [SerializeField] private int maxPickupCount = 5;
 
     [Header("Owned Objects")]
     [SerializeField] private List<Crab> crabs = new List<Crab>();
@@ -19,6 +20,7 @@ public class PlayerInventory : ScriptableObject
     public int Shells => shells;
     public int Pearls => pearls;
     public int Capacity => capacity;
+    public int MaxPickupCount => maxPickupCount;
     public List<Crab> Crabs => crabs;
 
     public int HouseCount => houses.Count;

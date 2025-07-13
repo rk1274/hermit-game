@@ -122,9 +122,10 @@ public class HouseManager : MonoBehaviour
     {
         if(selectedOption != 0)
         {
-            if (playerInventory.GetHouse(selectedOption).Name.Equals("flame_tree_01") || playerInventory.GetHouse(selectedOption).Name.Equals("flame_tree_02"))
+            House selectedHouse = playerInventory.GetHouse(selectedOption);
+            if (selectedHouse.IsSpecial)
             {
-                itemDB.SetActive("fire");
+                itemDB.SetActive(selectedHouse.UnlockedItemName);
             }
 
             playerInventory.AddCapacity(selectedOption);

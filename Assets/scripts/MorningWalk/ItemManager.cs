@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using TMPro;
 using System.Linq;
 using UnityEngine.SceneManagement;
 
@@ -26,6 +27,9 @@ public class ItemManager : MonoBehaviour
     public NewCrabManager crabManager;
     public MoveCamera cameraController;
 
+    [Header("UI")]
+    [SerializeField] private TMP_Text itemCountDisplay;
+
     public BeachItemGenerator beachItemGenerator;
 
     private Dictionary<Button, Item> locationItemMap;
@@ -38,6 +42,8 @@ public class ItemManager : MonoBehaviour
         locationItemMap = beachItemGenerator.GenerateBeachItems();
         internalCrabCount = inventory.CrabCount;
         chosenItems.ClearAllItems();
+
+        itemCountDisplay.text = $"{itemCount} / {inventory.MaxPickupCount}";
     }
 
     public void SetChosen(GameObject itemLocationObj)
@@ -48,7 +54,7 @@ public class ItemManager : MonoBehaviour
 
     private IEnumerator HandleItemSelection(Button itemLocation, GameObject itemLocationObj)
     {
-        if (itemCount >= 5)
+        if (itemCount >= inventory.MaxPickupCount)
         {
             Debug.Log("Max items reached.");
 
@@ -71,6 +77,8 @@ public class ItemManager : MonoBehaviour
             itemLocationObj.SetActive(false);
             AddNewSelection(item);
         }
+
+        itemCountDisplay.text = $"{itemCount} / {inventory.MaxPickupCount}";
     }
 
     private IEnumerator HandleCrabSelection(Item item, GameObject itemLocationObj)
