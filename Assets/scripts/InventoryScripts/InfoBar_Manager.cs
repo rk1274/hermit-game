@@ -34,6 +34,8 @@ public class InfoBar_Manager : MonoBehaviour
 
         bool isMaxLevel = house.Level >= house.MaxLevel;
 
+        Debug.Log($"House: {house.Name}, Is Max Level: {isMaxLevel}");
+
         upgradeButtonContainer.SetActive(!isMaxLevel);
         upgradeInfo.SetActive(!isMaxLevel);
 
