@@ -12,12 +12,12 @@ public class CrabHandler : MonoBehaviour
 
     private void Start()
     {
-        Dictionary<int, Crab> crabs = inventory.Crabs;
+        List<CrabItem> crabs = inventory.Crabs;
 
         for (int i = 0; i < crabs.Count; i++) 
         {
-            Crab crab = crabs.ElementAt(i).Value;
-            int crabID = crabs.ElementAt(i).Key;
+            Crab crab = crabs[i].crab;
+            int crabID = crabs[i].ID;
 
             Transform body = crabGOs[i].transform.Find("body");
             Transform shell = crabGOs[i].transform.Find("shell");

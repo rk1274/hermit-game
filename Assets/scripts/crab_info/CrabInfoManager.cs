@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class CrabInfoManager : MonoBehaviour
 {
@@ -12,19 +13,23 @@ public class CrabInfoManager : MonoBehaviour
     [Header("Containers")]
     [SerializeField] private GameObject shell;
     [SerializeField] private GameObject body;
+    [SerializeField] private TMP_Text name;
 
     private void Start()
     {
         int crabID = PlayerPrefs.GetInt("selected_crab");
-        Crab crab = inventory.GetCrab(crabID);
+        CrabItem crabItem = inventory.GetCrab(crabID);
 
-        updateCrab(crab);
+        updateCrab(crabItem);
     }
 
-    private void updateCrab(Crab crab)
+    private void updateCrab(CrabItem crabItem)
     {
+        Crab crab = crabItem.crab;
         setSprite(body, crab.Body.Sprite);
         setSprite(shell, crab.Shell.Sprite);
+
+        name.text = crabItem.name;
     }
 
     public void setSprite(GameObject go, Sprite sprite)

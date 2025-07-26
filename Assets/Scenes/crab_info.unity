@@ -586,6 +586,7 @@ MonoBehaviour:
   inventory: {fileID: 11400000, guid: 926ecfe8040aa9e46884e87c13b918ee, type: 2}
   shell: {fileID: 508919001}
   body: {fileID: 1420468362}
+  name: {fileID: 1500925136}
 --- !u!4 &557547090
 Transform:
   m_ObjectHideFlags: 0

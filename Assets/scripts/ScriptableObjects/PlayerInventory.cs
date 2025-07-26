@@ -13,7 +13,7 @@ public class PlayerInventory : ScriptableObject
     [SerializeField] private int maxPickupCount = 5;
 
     [Header("Owned Objects")]
-    [SerializeField] private Dictionary<int,Crab> crabs = new Dictionary<int, Crab>();
+    [SerializeField] private List<CrabItem> crabs = new List<CrabItem>();
     [SerializeField] private List<House> houses = new List<House>();
     [SerializeField] private List<Plot> plots = new List<Plot>();
 
@@ -23,15 +23,17 @@ public class PlayerInventory : ScriptableObject
     public int Pearls => pearls;
     public int Capacity => capacity;
     public int MaxPickupCount => maxPickupCount;
-    public Dictionary<int, Crab> Crabs => crabs;
+    public List<CrabItem> Crabs => crabs;
 
     public int HouseCount => houses.Count;
     public int CrabCount => crabs.Count;
     public int PlotCount => plots.Count;
 
     public void AddCrab(Crab crab) {
-        crabs[crabID] = crab;
+        CrabItem crabItem = new CrabItem(crab, crabID);
         crabID++;
+
+        crabs.Add(crabItem);
     }
     public void AddPlot(Plot plot) => plots.Add(plot);
 
@@ -81,9 +83,16 @@ public class PlayerInventory : ScriptableObject
         return houses[index];
     }
 
-    public Crab GetCrab(int crabID)
+    public CrabItem GetCrab(int crabID)
     {
-        return crabs[crabID];
+        foreach (CrabItem crab in crabs)
+        {
+            if (crab.ID == crabID) {
+                return crab;
+            }
+        }
+
+        return null;
     }
 
     public void ResetInventory()
