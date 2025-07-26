@@ -29,6 +29,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/inventory.unity
     guid: a92347dfb70c6b247acf307aacf40a62
+  - enabled: 1
+    path: Assets/Scenes/crab_info.unity
+    guid: 93910b32dc910fd458eeccf712188a8a
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 4fe72818fe3d843419a67f66b8909c64, type: 2}
     com.unity.adaptiveperformance.samsung.android.provider_settings: {fileID: 11400000, guid: 29a0ee4a37a228946b9042691d877155, type: 2}

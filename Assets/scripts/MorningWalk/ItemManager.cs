@@ -30,6 +30,11 @@ public class ItemManager : MonoBehaviour
     [Header("UI")]
     [SerializeField] private TMP_Text itemCountDisplay;
 
+    [Header("UI Popups")]
+    [SerializeField] private GameObject crabWarningPopupPrefab;
+    [SerializeField] private GameObject noSpacePopupPrefab;
+    [SerializeField] private Canvas worldCanvas;
+
     public BeachItemGenerator beachItemGenerator;
 
     private Dictionary<Button, Item> locationItemMap;
@@ -56,7 +61,7 @@ public class ItemManager : MonoBehaviour
     {
         if (itemCount >= inventory.MaxPickupCount)
         {
-            Debug.Log("Max items reached.");
+            ShowNoSpacePopup(itemLocationObj.transform.position);
 
             yield break;
         }
@@ -66,7 +71,8 @@ public class ItemManager : MonoBehaviour
         {
             if (inventory.Capacity <= internalCrabCount)
             {
-                Debug.Log("No space for more crabs.");
+                ShowCrabPopup(itemLocationObj.transform.position);
+
                 yield break;
             }
 
@@ -79,6 +85,53 @@ public class ItemManager : MonoBehaviour
         }
 
         itemCountDisplay.text = $"{itemCount} / {inventory.MaxPickupCount}";
+    }
+
+    private void ShowNoSpacePopup(Vector3 itemWorldPosition)
+    {
+        Vector3 popupOffset = new Vector3(0, 0.5f, 0);
+        Vector3 popupPosition = itemWorldPosition + popupOffset;
+
+        GameObject popup = Instantiate(noSpacePopupPrefab, worldCanvas.transform);
+
+        popup.transform.position = popupPosition;
+
+        TMP_Text text = popup.GetComponentInChildren<TMP_Text>();
+        text.text = "No space for more items!";
+
+        CanvasGroup canvasGroup = popup.GetComponent<CanvasGroup>();
+        StartCoroutine(FadeAndDestroy(canvasGroup, popup, 1.5f));
+    }
+
+    private IEnumerator FadeAndDestroy(CanvasGroup canvasGroup, GameObject popup, float duration)
+    {
+        float elapsed = 0f;
+        float startAlpha = canvasGroup.alpha;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            canvasGroup.alpha = Mathf.Lerp(startAlpha, 0f, elapsed / duration);
+            yield return null;
+        }
+
+        Destroy(popup);
+    }
+
+    private void ShowCrabPopup(Vector3 crabWorldPosition)
+    {
+        Vector3 popupOffset = new Vector3(0, 0.5f, 0);
+        Vector3 popupPosition = crabWorldPosition + popupOffset;
+
+        GameObject popup = Instantiate(crabWarningPopupPrefab, worldCanvas.transform);
+
+        popup.transform.position = popupPosition;
+
+        TMP_Text text = popup.GetComponentInChildren<TMP_Text>();
+        text.text = "No space for more crabs!";
+
+        CanvasGroup canvasGroup = popup.GetComponent<CanvasGroup>();
+        StartCoroutine(FadeAndDestroy(canvasGroup, popup, 1.5f));
     }
 
     private IEnumerator HandleCrabSelection(Item item, GameObject itemLocationObj)

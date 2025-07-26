@@ -119,8 +119,8 @@ MonoBehaviour:
     ShellCost: 0
     PearlCost: 0
     CrabAmount: 2
-    MaxLevel: 1
-    Level: 2
+    MaxLevel: 2
+    Level: 1
     IsSpecial: 0
     UnlockedItemName: 
   - Sprite: {fileID: -2003191601, guid: 0c5f49f9e2b53134088dd1d2b19ced7d, type: 3}
